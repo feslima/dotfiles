@@ -42,6 +42,10 @@ keymap("n", "<leader>h", ":bprevious<CR>", opts) -- go to previous buffer
 keymap("n", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line 
 keymap("n", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line 
 
+-- Insert --
+-- Insert line above cursor
+keymap("i", "<C-k>", "<Esc><S-o>", opts)
+
 -- Visual --
 -- Move text up and down
 keymap("v", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line 
