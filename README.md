@@ -10,3 +10,7 @@ Probably because the Ubuntu/Linux python distribution is broken somehow. See [th
 1. Force a reinstall of pip for both python2 and python3 versions as described [here](https://askubuntu.com/a/1026848).
 2. Uninstall both `pynvim` and `neovim` with `python -m pip uninstall pynvim neovim`. **Do this for both pythons (2 and 3)**.
 3. Install `pynvim` with `python -m pip install pynvim` for both pythons (2 and 3).
+
+# Useful info
+## Where the plugins are installed?
+Look for the folder `~/.local/share/nvim`. Here all the stuff necessary for coding will be installed, e.g: LSP.
