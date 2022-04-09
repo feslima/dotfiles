@@ -66,6 +66,10 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enables LSP
   use "williamboman/nvim-lsp-installer" -- enables easy LSP configurations (e.g. UI, faster loading, etc.)
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim" -- Highly customizable fuzzy finder
+  use "nvim-telescope/telescope-media-files.nvim" -- Allows Telescope to preview images, pdf, videos, etc.
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

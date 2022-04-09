@@ -39,8 +39,11 @@ keymap("n", "<leader>l", ":bnext<CR>", opts)     -- go to next buffer
 keymap("n", "<leader>h", ":bprevious<CR>", opts) -- go to previous buffer
 
 -- Move text up and down
-keymap("n", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line 
-keymap("n", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line 
+keymap("n", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line
+keymap("n", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line
+
+-- Telescope
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
 
 -- Insert --
 -- Insert line above cursor
@@ -48,10 +51,10 @@ keymap("i", "<C-k>", "<Esc><S-o>", opts)
 
 -- Visual --
 -- Move text up and down
-keymap("v", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line 
-keymap("v", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line 
+keymap("v", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line
+keymap("v", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts) -- move selected text up one line 
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts) -- move selected text down one line 
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts) -- move selected text up one line
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts) -- move selected text down one line
