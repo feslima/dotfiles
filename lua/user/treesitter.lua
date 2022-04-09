@@ -15,4 +15,10 @@ configs.setup {
 
   },
   indent = { enable = true },
+  rainbow = {
+    -- https://github.com/p00f/nvim-ts-rainbow#installation-and-setup
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  }
 }

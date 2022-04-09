@@ -1,5 +1,6 @@
 local fn = vim.fn
 
+
 -- Automatically install install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -45,6 +46,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used in lots of plugins
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both nvim-cmp and treesitter
 
   -- Colorscheme
   use "LunarVim/darkplus.nvim" -- Very similar with VSCode colors (you need TreeSiter to have good syntax highlighting
@@ -72,6 +74,7 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "p00f/nvim-ts-rainbow"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
