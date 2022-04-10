@@ -25,8 +25,8 @@ keymap("n", "<C-j>", "<C-w>j", opts) -- move to split below of cursor
 keymap("n", "<C-k>", "<C-w>k", opts) -- move to split above of cursor
 keymap("n", "<C-l>", "<C-w>l", opts) -- move to split right of cursor
 
--- <Space-e> -> Open/Close file explore of current directory
-keymap("n", "<leader>e", ":Lex 30<CR>", opts) -- open/close the left explore (Lex) with 30 width
+-- <Space-e> -> Open/Close file explorer (NvimTree)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- open/close file explorer
 
 -- Resizing current window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)             -- resize current window towards top

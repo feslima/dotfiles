@@ -83,6 +83,12 @@ return packer.startup(function(use)
   -- Git plugins
   use "lewis6991/gitsigns.nvim" -- git decorations similar to VSCode
 
+  -- Nvim-Tree
+  use {
+    "kyazdani42/nvim-tree.lua", -- Better file explorer
+    requires = {"kyazdani42/nvim-web-devicons"}, -- optional, for file icon
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
