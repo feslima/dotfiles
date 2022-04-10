@@ -89,6 +89,15 @@ return packer.startup(function(use)
     requires = {"kyazdani42/nvim-web-devicons"}, -- optional, for file icon
   }
 
+  -- Bufferline
+  use {
+    "akinsho/bufferline.nvim",
+    requires = {"kyazdani42/nvim-web-devicons"},
+  }
+
+  -- Buffer Bye
+  use "moll/vim-bbye" -- allows to delete buffers without closing windows
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
