@@ -5,12 +5,25 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained",
+  ensure_installed = {
+    "bash",
+    "css",
+    "dockerfile",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "make",
+    "python",
+    "regex",
+    "rust",
+    "toml",
+    "typescript",
+    "yaml",
+  },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
-  autopairs = {
-    enable = true
-  },
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
@@ -23,5 +36,9 @@ configs.setup {
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
-  }
+  },
+  autopairs = {
+    -- https://github.com/windwp/nvim-autopairs
+    enable = true,
+  },
 }
