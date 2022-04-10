@@ -80,6 +80,9 @@ return packer.startup(function(use)
   -- Additional comment utilities
   use "JoosepAlviste/nvim-ts-context-commentstring" -- To differentiate in files with multilanguages embedded (e.g. .tsx, .vue)
 
+  -- Git plugins
+  use "lewis6991/gitsigns.nvim" -- git decorations similar to VSCode
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

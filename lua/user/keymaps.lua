@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "           -- remap the literal space as leader key
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+-- NORMAL --
 -- Better window navigation (for navigation between splits)
 keymap("n", "<C-h>", "<C-w>h", opts) -- move to split left of cursor
 keymap("n", "<C-j>", "<C-w>j", opts) -- move to split below of cursor
@@ -45,16 +45,20 @@ keymap("n", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one lin
 -- Telescope
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
 
--- Insert --
+-- Gitsigns
+keymap("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts) -- stage line (hunk) under cursor
+keymap("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts) -- unstage line (hunk) under cursor
+
+-- INSERT --
 -- Insert line above cursor
 keymap("i", "<C-k>", "<Esc><S-o>", opts)
 
--- Visual --
+-- VISUAL --
 -- Move text up and down
 keymap("v", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line
 keymap("v", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line
 
--- Visual Block --
+-- VISUAL BLOCK --
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts) -- move selected text up one line
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts) -- move selected text down one line
