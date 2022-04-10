@@ -41,4 +41,9 @@ configs.setup {
     -- https://github.com/windwp/nvim-autopairs
     enable = true,
   },
+  context_commentstring = {
+    -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring#behavior
+    enable = true,
+    enable_autocmd = false,
+  }
 }
