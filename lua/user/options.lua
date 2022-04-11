@@ -32,7 +32,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications 
+  guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"
@@ -44,3 +44,10 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- This possibly doesn't work
+
+-- Global configs
+local g = vim.g
+
+-- Python providers
+g.python_host_prog = "/home/felipe/.pyenv/versions/nvim-python2/bin/python"
+g.python3_host_prog = "/home/felipe/.pyenv/versions/nvim-python3/bin/python"
