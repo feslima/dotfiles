@@ -96,6 +96,9 @@ return packer.startup(function(use)
     requires = {"kyazdani42/nvim-web-devicons"},
   }
 
+  -- Lualine
+  use "nvim-lualine/lualine.nvim"
+
   -- Buffer Bye
   use "moll/vim-bbye" -- allows to delete buffers without closing windows
 
