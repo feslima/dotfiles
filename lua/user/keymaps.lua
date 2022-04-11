@@ -47,7 +47,9 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require
 
 -- Gitsigns
 keymap("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts) -- stage line (hunk) under cursor
-keymap("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts) -- unstage line (hunk) under cursor
+keymap("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts)
+keymap("n", "<leader>hu", "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>", opts) -- undo last stage hunk
+
 
 -- INSERT --
 -- Insert line above cursor
@@ -57,6 +59,10 @@ keymap("i", "<C-k>", "<Esc><S-o>", opts)
 -- Move text up and down
 keymap("v", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line
 keymap("v", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line
+
+-- Gitsigns
+keymap("v", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('v'), vim.fn.line('.')})<CR>", opts) -- stage line (hunk) under cursor
+keymap("v", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('v'), vim.fn.line('.')})<CR>", opts) -- unstage line (hunk) under cursor
 
 -- VISUAL BLOCK --
 -- Move text up and down
