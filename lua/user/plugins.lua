@@ -102,6 +102,9 @@ return packer.startup(function(use)
   -- Buffer Bye
   use "moll/vim-bbye" -- allows to delete buffers without closing windows
 
+  -- Toggleterm
+  use "akinsho/toggleterm.nvim" -- allows terminal use when editing in nvim
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
