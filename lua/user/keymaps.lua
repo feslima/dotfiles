@@ -50,6 +50,8 @@ keymap("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.
 keymap("n", "<leader>hr", "<cmd>lua require'gitsigns'.reset_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts)
 keymap("n", "<leader>hu", "<cmd>lua require'gitsigns'.undo_stage_hunk()<CR>", opts) -- undo last stage hunk
 
+-- Null-LS
+keymap("n", "<leader><A-f>", ":Format<CR>", opts) -- trigger formatting
 
 -- INSERT --
 -- Insert line above cursor

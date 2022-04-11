@@ -22,6 +22,7 @@
      ([source](https://github.com/JohnnyMorganz/StyLua#installation)).
   2. `black`, `mypy`, and other python related: These are managed via pip, so
      you must have them installed in their respective environments.
+  3. `markdown-cli`: [This is the repo](https://github.com/igorshubovych/markdownlint-cli)
 5. paste the content of this folder without this `README.md` into the home
    directory `home/<user>/.config/nvim/`. **Make sure you don't have a folder
    like this already before doing this!**
