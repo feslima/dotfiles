@@ -13,6 +13,7 @@ configs.setup {
     "javascript",
     "jsdoc",
     "json",
+    "jsonc",
     "lua",
     "make",
     "python",

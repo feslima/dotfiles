@@ -68,6 +68,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enables LSP
   use "williamboman/nvim-lsp-installer" -- enables easy LSP configurations (e.g. UI, faster loading, etc.)
+  use "tamago324/nlsp-settings.nvim" -- completion for jsonls files
   use "jose-elias-alvarez/null-ls.nvim" -- for formatting and linting
 
   -- Telescope
