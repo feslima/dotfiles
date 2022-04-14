@@ -76,7 +76,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" }})<CR>', opts)
   -- go to previous diagnostic line and open the float
   keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
-  keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  -- keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]] -- Enables the ':Format' command
 end
 

@@ -19,6 +19,7 @@ global_confs.indent_blankline_filetype_exclude = {
   "alpha",
   "NvimTree"
 }
+global_confs.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 
 -- These require treesitter installed
 global_confs.indent_blankline_use_treesitter = false

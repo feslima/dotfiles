@@ -17,7 +17,7 @@ null_ls.setup {
     -- diagnostics.eslint,
     formatting.black,
     -- diagnostics.mypy,
-    formatting.stylua,
+    -- formatting.stylua,
     -- formatting.markdownlint,
   },
 }
