@@ -106,6 +106,9 @@ return packer.startup(function(use)
   -- Toggleterm
   use "akinsho/toggleterm.nvim" -- allows terminal use when editing in nvim
 
+  -- Project
+  use "ahmedkhalf/project.nvim" -- allows project-like management
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
