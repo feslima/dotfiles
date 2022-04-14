@@ -46,14 +46,14 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
-  snippet = {  -- Check nvim-cmp repo README for more configurations.
+  snippet = { -- Check nvim-cmp repo README for more configurations.
     expand = function(args)
       luasnip.lsp_expand(args.body) -- Using LuaSnip engine
     end,
   },
   mapping = {
     ["<A-k>"] = cmp.mapping.select_prev_item(), -- Press Alt + k to go to previous item in completion popup
-		["<A-j>"] = cmp.mapping.select_next_item(), -- Press Alt + j to go to next item in completion popup
+    ["<A-j>"] = cmp.mapping.select_next_item(), -- Press Alt + j to go to next item in completion popup
     -- Control + (b|f) to scroll docs in completion popup
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
@@ -125,8 +125,10 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    }
   },
   experimental = {
     ghost_text = false,
