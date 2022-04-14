@@ -88,13 +88,13 @@ return packer.startup(function(use)
   -- Nvim-Tree
   use {
     "kyazdani42/nvim-tree.lua", -- Better file explorer
-    requires = {"kyazdani42/nvim-web-devicons"}, -- optional, for file icon
+    requires = { "kyazdani42/nvim-web-devicons" }, -- optional, for file icon
   }
 
   -- Bufferline
   use {
     "akinsho/bufferline.nvim",
-    requires = {"kyazdani42/nvim-web-devicons"},
+    requires = { "kyazdani42/nvim-web-devicons" },
   }
 
   -- Lualine
@@ -112,6 +112,10 @@ return packer.startup(function(use)
   -- Indentline
   use "lukas-reineke/indent-blankline.nvim" -- adds vertical indentation lines to code
 
+  -- Alpha
+  use { "goolord/alpha-nvim", -- Greeter for neovim when not opening files
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

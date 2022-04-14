@@ -9,6 +9,16 @@ global_confs.indent_blankline_char = "▏"
 global_confs.indent_blankline_enabled = true
 global_confs.indent_blankline_show_first_indent_level = true
 global_confs.indent_blankline_show_trailing_blankline_indent = false
+global_confs.indent_blankline_filetype_exclude = {
+  "lspinfo",
+  "packer",
+  "checkhealth",
+  "help",
+  "man",
+  "",
+  "alpha"
+}
+
 -- These require treesitter installed
 global_confs.indent_blankline_use_treesitter = false
 global_confs.indent_blankline_show_current_context = false
