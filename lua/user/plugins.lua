@@ -109,6 +109,9 @@ return packer.startup(function(use)
   -- Project
   use "ahmedkhalf/project.nvim" -- allows project-like management
 
+  -- Indentline
+  use "lukas-reineke/indent-blankline.nvim" -- adds vertical indentation lines to code
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
