@@ -16,7 +16,8 @@ global_confs.indent_blankline_filetype_exclude = {
   "help",
   "man",
   "",
-  "alpha"
+  "alpha",
+  "NvimTree"
 }
 
 -- These require treesitter installed
