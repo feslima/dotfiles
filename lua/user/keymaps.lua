@@ -25,25 +25,15 @@ keymap("n", "<C-j>", "<C-w>j", opts) -- move to split below of cursor
 keymap("n", "<C-k>", "<C-w>k", opts) -- move to split above of cursor
 keymap("n", "<C-l>", "<C-w>l", opts) -- move to split right of cursor
 
--- <Space-e> -> Open/Close file explorer (NvimTree)
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- open/close file explorer
-
 -- Resizing current window with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)             -- resize current window towards top
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)           -- resize current window towards bottom
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- resize current window towards right
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)  -- resize current window towards left
 
--- Navigating buffers with <Space>
-keymap("n", "<leader>l", ":bnext<CR>", opts)     -- go to next buffer
-keymap("n", "<leader>h", ":bprevious<CR>", opts) -- go to previous buffer
-
 -- Move text up and down
 keymap("n", "<A-k>", ":move .-2<CR>==", opts) -- move selected text up one line
 keymap("n", "<A-j>", ":move .+1<CR>==", opts) -- move selected text down one line
-
--- Telescope
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
 
 -- Gitsigns
 keymap("n", "<leader>hs", "<cmd>lua require'gitsigns'.stage_hunk({vim.fn.line('.'), vim.fn.line('v')})<CR>", opts) -- stage line (hunk) under cursor

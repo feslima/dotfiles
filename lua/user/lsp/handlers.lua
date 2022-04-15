@@ -69,7 +69,6 @@ local function lsp_keymaps(bufnr)
   -- keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   -- 'gl' in normal mode shows the line diagnostics under cursor
   keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(0, { border = "rounded" })<CR>',opts)
   -- go to next diagnostic line and open the float
@@ -77,7 +76,7 @@ local function lsp_keymaps(bufnr)
   -- go to previous diagnostic line and open the float
   keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
   -- keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]] -- Enables the ':Format' command
+  -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]] -- Enables the ':Format' command
 end
 
 M.on_attach = function(client, bufnr)
