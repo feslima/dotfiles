@@ -9,6 +9,11 @@
 4. Move it to `$PATH` with `sudo mv nvim.appimage /usr/local/bin/nvim`.
 5. Done!
 
+## Lazygit integration
+
+Install `lazygit` following [these
+instructions](https://github.com/jesseduffield/lazygit#ubuntu)
+
 ## setup with `pyenv` You must have `pyenv` installed
 
 1. Install python3 version with `pyenv isntall 3.x.z` (whatever is most stable

@@ -34,6 +34,7 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<CR>", "List branches" },
     c = { "<cmd>Telescope git_commits<CR>", "List commits" },
     s = { "<cmd>Telescope git_status<CR>", "Show git status" },
+    l = { "<cmd> lua _LAZYGIT_TOGGLE()<CR>", "Toggle LazyGitTerminal" },
     h = {
       name = "Hunk operations (Gitsigns)",
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
