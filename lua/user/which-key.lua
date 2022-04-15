@@ -25,6 +25,7 @@ local opts = {
 
 local mappings = {
   F = { "<cmd>Telescope live_grep theme=ivy<CR>", "Find Text" },
+  P = { "<cmd>Telescope projects<CR>", "Open projects"},
   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>", "Navigate buffers (Telescope)" },
   c = { "<cmd>Bdelete!<CR>", "Close buffer" },
   e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
@@ -47,6 +48,7 @@ local mappings = {
       u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" }
     }
   },
+  h = { "<cmd>nohlsearch<CR>", "Clear highlight search" },
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
