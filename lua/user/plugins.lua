@@ -70,6 +70,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- enables easy LSP configurations (e.g. UI, faster loading, etc.)
   use "tamago324/nlsp-settings.nvim" -- completion for jsonls files
   use "jose-elias-alvarez/null-ls.nvim" -- for formatting and linting
+  use "ray-x/lsp_signature.nvim" -- Shows LSP function signature as you type
 
   -- Telescope
   use "nvim-telescope/telescope.nvim" -- Highly customizable fuzzy finder
