@@ -72,7 +72,9 @@ vim.api.nvim_set_keymap("n", "<F8>", "", {
   silent = true,
   desc = "Create conditional breakpoint",
   callback = function()
-    dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
+    vim.ui.input({ prompt="Breakpoint condition:", default = "" }, function(input)
+      dap.set_breakpoint(input)
+    end)
   end
 })
 

@@ -25,14 +25,14 @@ dapui.setup({
       },
       { id = "breakpoints", size = 0.25 },
       { id = "stacks", size = 0.25 },
-      { id = "watches", size = 00.25 },
+      { id = "watches", size = 0.25 },
     },
     size = 40,
     position = "right", -- Can be "left", "right", "top", "bottom"
   },
   tray = {
     elements = { "repl" },
-    size = 10,
+    size = 15,
     position = "bottom", -- Can be "left", "right", "top", "bottom"
   },
   floating = {
@@ -58,6 +58,16 @@ function debugger_close(args)
   dapui.close()
 end
 
+function debugger_eval(args)
+  vim.ui.input({ prompt = "Type expression for one time evaluation" }, function(input)
+    if input ~= '' and input ~= nil then
+      dapui.eval(input)
+      dapui.eval() -- this jumps the cursor to the floating window
+    end
+  end)
+end
+
 vim.api.nvim_create_user_command("DebuggerToggle", debugger_toggle, { desc = "Toggle debugger UI" })
 vim.api.nvim_create_user_command("DebuggerOpen", debugger_open, { desc = "Open debugger UI" })
 vim.api.nvim_create_user_command("DebuggerClose", debugger_close, { desc = "Close debugger UI" })
+vim.api.nvim_create_user_command("DebuggerEval", debugger_eval, { desc = "Evaluate one time expression in debugger" })

@@ -31,8 +31,9 @@ local mappings = {
   d = {
     name = "Debugging",
     d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
-    c = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
-    o = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
+    c = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
+    e = { "<cmd>DebuggerEval<CR>", "Evaluate one time expression in debbuger" },
+    o = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
   },
   e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>", "Find files" },
