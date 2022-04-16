@@ -25,9 +25,15 @@ local opts = {
 
 local mappings = {
   F = { "<cmd>Telescope live_grep theme=ivy<CR>", "Find Text" },
-  P = { "<cmd>Telescope projects<CR>", "Open projects"},
+  P = { "<cmd>Telescope projects<CR>", "Open projects" },
   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>", "Navigate buffers (Telescope)" },
   c = { "<cmd>Bdelete!<CR>", "Close buffer" },
+  d = {
+    name = "Debugging",
+    d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
+    c = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
+    o = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
+  },
   e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>", "Find files" },
   g = {
