@@ -125,6 +125,9 @@ return packer.startup(function(use)
   use "mfussenegger/nvim-dap" -- Debug Adapter Protocol client
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- UI for nvim-dap
 
+  -- Dressing
+  use "stevearc/dressing.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
