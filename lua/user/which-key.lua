@@ -94,7 +94,18 @@ local mappings = {
 	},
 	t = {
 		name = "Terminal utils",
-		d = { "<cmd> lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
+		d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
+	},
+	T = {
+		name = "Trouble",
+		t = { "<cmd>TroubleToggle<CR>", "Toggle trouble panel" },
+    R = { "<cmd>TroubleRefresh<CR>", "Refresh active trouble list" },
+		d = { "<cmd>TroubleToggle document_diagnostics<CR>", "Toggle document diagnostics" },
+		w = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Toggle workspace diagnostics" },
+		q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfix items" },
+		l = { "<cmd>TroubleToggle loclist<CR>", "Toggle window's location list items" },
+		r = { "<cmd>TroubleToggle lsp_references<CR>", "Toggle references of word" },
+		D = { "<cmd>TroubleToggle lsp_definitions<CR>", "Toggle definitions of word" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
 }
