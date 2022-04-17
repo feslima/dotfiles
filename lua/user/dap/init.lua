@@ -21,6 +21,12 @@ dap.adapters = require('user.dap.adapters')
 -- load the configurations
 dap.configurations = require('user.dap.configurations')
 
+-- enable close hover on q (https://github.com/mfussenegger/nvim-dap/issues/415#issuecomment-1017180055)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern="dap-float",
+  command="nnoremap <buffer><silent> q <cmd>close!<CR>"
+})
+
 -- Set DAP specific keymaps
 vim.api.nvim_set_keymap("n", "<F5>", "", {
   noremap = true,

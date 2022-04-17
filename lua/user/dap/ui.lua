@@ -4,6 +4,20 @@ if not status_ok then
   return
 end
 
+local dap_status_ok, dap = pcall(require, "dap")
+if not dap_status_ok then
+  vim.notify("Couldn't load 'DAP' for 'dapui'!")
+  return
+end
+
+dap.listeners.after['event_initialized']['me'] = function()
+  dapui.open() -- automatically opens the ui when session starts
+end
+
+dap.listeners.after['event_terminated']['me'] = function()
+  dapui.close() -- automatically closes the ui when session starts
+end
+
 dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {

@@ -33,6 +33,7 @@ local mappings = {
     d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
     c = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
     e = { "<cmd>DebuggerEval<CR>", "Evaluate one time expression in debbuger" },
+    h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "View expression value under cursor in hover" },
     o = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
   },
   e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
