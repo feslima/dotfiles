@@ -3,8 +3,7 @@
 [Instructions](https://github.com/neovim/neovim/wiki/Installing-Neovim#appimage-universal-linux-package)
 
 1. Uninstall previous versions if you have any.
-2. Download latest stable it with: `curl -LO
-   https://github.com/neovim/neovim/releases/latest/download/nvim.appimage`.
+2. Download latest stable it with: `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage`.
 3. Run `chmod u+x nvim.appimage`.
 4. Move it to `$PATH` with `sudo mv nvim.appimage /usr/local/bin/nvim`.
 5. Done!
@@ -19,10 +18,8 @@ instructions](https://github.com/jesseduffield/lazygit#ubuntu)
 1. Install python3 version with `pyenv isntall 3.x.z` (whatever is most stable
    for python 3).
 2. Create the virtual environment exclusively for `neovim` for python 3 with:
-   `pyenv virtualenv <python-version> <venv-name>` (e.g. `pyenv virtualenv
-   3.10.2 nvim-python3`).
-3. Activate the environments create in step 2 with `pyenv activate
-   nvim-python3` and install `pynvim` with `python -m pip install pynvim` (see
+   `pyenv virtualenv <python-version> <venv-name>` (e.g. `pyenv virtualenv 3.10.2 nvim-python3`).
+3. Activate the environments create in step 2 with `pyenv activate nvim-python3` and install `pynvim` with `python -m pip install pynvim` (see
    Troubleshooting section for more info).
 4. Grab the python path for python venv with `pyenv which python`, the go the
    `lua/user/options.lua` file and set the `g:python3_host_prog` variables to
@@ -39,7 +36,9 @@ instructions](https://github.com/jesseduffield/lazygit#ubuntu)
     directory `home/<user>/.config/nvim/`. **Make sure you don't have a folder
     like this already before doing this!**
 
-# Troubleshooting ## `:checkhealth` says neovim (python) is not installed
+# Troubleshooting
+
+## `:checkhealth` says neovim (python) is not installed
 
 Probably because the Ubuntu/Linux python distribution is broken somehow. See
 [this
@@ -49,11 +48,25 @@ get this error, then you have to:
 
 1. Force a reinstall of pip for both python2 and python3 versions as described
    [here](https://askubuntu.com/a/1026848).
-2. Uninstall both `pynvim` and `neovim` with `python -m pip uninstall pynvim
-   neovim`.
+2. Uninstall both `pynvim` and `neovim` with `python -m pip uninstall pynvim neovim`.
 3. Install `pynvim` with `python -m pip install pynvim`
 
-# Useful info ## Where the plugins are installed? Look for the folder
+## Formatting with `black` (or any other `null-ls` provider) doesn't work
+
+[Issue that discusses this.](https://github.com/jose-elias-alvarez/null-ls.nvim/issues/700#issuecomment-1060028732)
+
+You have these solutions:
+
+1. If you use `pyenv`, make sure you have a `.python-version` file present in
+   the directory where you run `nvim`.
+2. Make sure you activate the virtual environment before running `nvim`.
+3. [Configure `null-ls` to use local executables.](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/8a401e19c0c2b2569e820b3cc0a3398100d7d6fb/doc/BUILTIN_CONFIG.md#using-local-executables)
+4. [Configure `null-ls` conditional sources.](https://github.com/jose-elias-alvarez/null-ls.nvim/blob/8a401e19c0c2b2569e820b3cc0a3398100d7d6fb/doc/BUILTIN_CONFIG.md#conditional-sources)
+5. Mix 3 and 4 for an exaustive search for executables.
+
+# Useful info
+
+## Where the plugins are installed? Look for the folder
 
 `~/.local/share/nvim`. Here all the stuff necessary for coding will be
 installed, e.g: LSP.
