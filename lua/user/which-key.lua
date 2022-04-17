@@ -79,10 +79,12 @@ local mappings = {
   q = { "<cmd>q<CR>", "Quit" },
   s = {
     name = "Search (help, keymaps, etc)",
-    c = { "<cmd>Telescope commands<cr>", "Commands" },
+    a = { "<cmd>Telescope autocommands<CR>", "Autocommands" },
+    c = { "<cmd>Telescope commands<CR>", "Commands" },
     h = { "<cmd>Telescope help_tags<CR>", "List available help tags" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent Files" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    n = { "<cmd>Telescope notify theme=ivy<CR>", "Notifications history" },
+    r = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files" },
+    k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
   },
   w = { "<cmd>w<CR>", "Save" },
 }

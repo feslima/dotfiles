@@ -6,6 +6,7 @@ end
 
 -- Load telescope extensions here
 telescope.load_extension('media_files')
+telescope.load_extension('notify')
 
 telescope.setup {
   defaults = {
