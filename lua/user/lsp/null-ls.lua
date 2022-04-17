@@ -18,7 +18,10 @@ null_ls.setup({
 		formatting.black, -- [pyenv/venv] shell: python -m -pip install black
 		-- diagnostics.mypy, -- [pyenv/venv] shell: python -m -pip install mypy
 		formatting.stylua, -- [rust] shell: cargo install stylua
-		-- formatting.markdownlint, -- [node/npm] shell: npm install -g markdownlint-cli
+
+		-- markdown
+		formatting.markdownlint, -- [node/npm] shell: npm install -g markdownlint-cli
+		diagnostics.markdownlint,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
