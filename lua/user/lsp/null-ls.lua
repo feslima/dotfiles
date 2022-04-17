@@ -1,7 +1,7 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
   vim.notify("Couldn't load 'null-ls' plugin!")
-	return
+  return
 end
 
 -- List of supported formatters/diagnostics can be found in the links below
@@ -20,4 +20,15 @@ null_ls.setup {
     -- formatting.stylua,
     -- formatting.markdownlint,
   },
+  on_attach = function(client)
+    if client.resolved_capabilities.document_formatting then
+      local lsp_formatting_group_id = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = lsp_formatting_group_id,
+        buffer = 0,
+        command = "lua vim.lsp.buf.formatting_sync()",
+        desc = "Format on save if client has formatting capabilities"
+      })
+    end
+  end
 }
