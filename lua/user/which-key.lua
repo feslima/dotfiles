@@ -49,7 +49,7 @@ local mappings = {
 		b = { "<cmd>Telescope git_branches<CR>", "List branches" },
 		c = { "<cmd>Telescope git_commits<CR>", "List commits" },
 		s = { "<cmd>Telescope git_status<CR>", "Show git status" },
-		l = { "<cmd> lua _LAZYGIT_TOGGLE()<CR>", "Toggle LazyGitTerminal" },
+		l = { "<cmd> lua _LAZYGIT_TOGGLE()<CR>", "Toggle LazyGit Terminal" },
 		h = {
 			name = "Hunk operations (Gitsigns)",
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
@@ -91,6 +91,10 @@ local mappings = {
 		n = { "<cmd>Telescope notify theme=ivy<CR>", "Notifications history" },
 		r = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files" },
 		k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
+	},
+	t = {
+		name = "Terminal utils",
+		d = { "<cmd> lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
 }

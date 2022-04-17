@@ -40,6 +40,10 @@ like this already before doing this!**
 
 Install `lazygit` following [these instructions](https://github.com/jesseduffield/lazygit#ubuntu)
 
+## Lazydocker integration
+
+Install `lazydocker` following [these instructions](https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindows)
+
 ## `nvim-tree` requirements
 
 - Install `trash` with `sudo apt install trash-cli`
