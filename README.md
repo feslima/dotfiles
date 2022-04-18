@@ -60,8 +60,7 @@ Install `lazydocker` following [these instructions](https://github.com/jesseduff
 ### `:checkhealth` says neovim (python) is not installed
 
 Probably because the Ubuntu/Linux python distribution is broken somehow. See
-[this
-first](https://github.com/neovim/neovim/issues/9246#issuecomment-477066616).
+[this first](https://github.com/neovim/neovim/issues/9246#issuecomment-477066616).
 Then try running for python2 `python -m pip uninstall pynvim neovim`. If you
 get this error, then you have to:
 

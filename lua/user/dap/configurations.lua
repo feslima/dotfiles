@@ -1,5 +1,6 @@
 local M = {
   python = {
+    -- https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
     {
       type = 'python',
       request = 'launch',

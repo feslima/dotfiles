@@ -124,6 +124,13 @@ return packer.startup(function(use)
 
 	-- Debuggers
 	use("mfussenegger/nvim-dap") -- Debug Adapter Protocol client
+	use({
+		"nvim-telescope/telescope-dap.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"mfussenegger/nvim-dap",
+		},
+	})
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- UI for nvim-dap
 
 	-- Dressing
