@@ -70,6 +70,7 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- completion for jsonls files
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatting and linting
 	use("ray-x/lsp_signature.nvim") -- Shows LSP function signature as you type
+	use("Vimjas/vim-python-pep8-indent") -- until https://github.com/nvim-treesitter/nvim-treesitter/issues/1136 is fixed
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim") -- Highly customizable fuzzy finder
