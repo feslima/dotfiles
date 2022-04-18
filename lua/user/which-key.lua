@@ -99,13 +99,22 @@ local mappings = {
 	T = {
 		name = "Trouble",
 		t = { "<cmd>TroubleToggle<CR>", "Toggle trouble panel" },
-    R = { "<cmd>TroubleRefresh<CR>", "Refresh active trouble list" },
+		R = { "<cmd>TroubleRefresh<CR>", "Refresh active trouble list" },
 		d = { "<cmd>TroubleToggle document_diagnostics<CR>", "Toggle document diagnostics" },
 		w = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Toggle workspace diagnostics" },
 		q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfix items" },
 		l = { "<cmd>TroubleToggle loclist<CR>", "Toggle window's location list items" },
 		r = { "<cmd>TroubleToggle lsp_references<CR>", "Toggle references of word" },
 		D = { "<cmd>TroubleToggle lsp_definitions<CR>", "Toggle definitions of word" },
+	},
+	u = {
+		name = "Test utilities",
+		a = { "<cmd>Ultest<CR>", "Run all tests in file" },
+		n = { "<cmd>UltestNearest><CR>", "Run nearest test to cursor" },
+		c = { "<cmd>UltestClear<CR>", "Clear test results" },
+		p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
+		s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
+		o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
 }
