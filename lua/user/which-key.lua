@@ -93,8 +93,13 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
 	},
 	t = {
-		name = "Terminal utils",
-		d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
+		name = "Test utilities",
+		a = { "<cmd>Ultest<CR>", "Run all tests in file" },
+		n = { "<cmd>UltestNearest<CR>", "Run nearest test to cursor" },
+		c = { "<cmd>UltestClear<CR>", "Clear test results" },
+		p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
+		s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
+		o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
 	},
 	T = {
 		name = "Trouble",
@@ -108,13 +113,8 @@ local mappings = {
 		D = { "<cmd>TroubleToggle lsp_definitions<CR>", "Toggle definitions of word" },
 	},
 	u = {
-		name = "Test utilities",
-		a = { "<cmd>Ultest<CR>", "Run all tests in file" },
-		n = { "<cmd>UltestNearest<CR>", "Run nearest test to cursor" },
-		c = { "<cmd>UltestClear<CR>", "Clear test results" },
-		p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
-		s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
-		o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
+		name = "Terminal utils",
+		d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
 }
