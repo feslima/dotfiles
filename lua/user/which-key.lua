@@ -95,6 +95,7 @@ local mappings = {
 	t = {
 		name = "Test utilities",
 		a = { "<cmd>Ultest<CR>", "Run all tests in file" },
+		d = { "<cmd>UltestDebugNearest<CR>", "Debug nearest test to cursor" },
 		n = { "<cmd>UltestNearest<CR>", "Run nearest test to cursor" },
 		c = { "<cmd>UltestClear<CR>", "Clear test results" },
 		p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
