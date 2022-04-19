@@ -27,10 +27,15 @@ local mappings = {
 	F = { "<cmd>Telescope live_grep theme=ivy<CR>", "Find Text" },
 	P = { "<cmd>Telescope projects<CR>", "Open projects" },
 	b = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
-		"Navigate buffers (Telescope)",
+		name = "Buffers",
+		c = { "<cmd>Bdelete!<CR>", "Close buffer" },
+		f = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
+			"Navigate buffers (Telescope)",
+		},
+		n = { "<cmd>bn<CR>", "Next buffer" },
+		p = { "<cmd>bp<CR>", "Previous buffer" },
 	},
-	c = { "<cmd>Bdelete!<CR>", "Close buffer" },
 	d = {
 		name = "Debugging",
 		d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
@@ -72,7 +77,8 @@ local mappings = {
 		I = { "<cmd>LspInstallInfo<CR>", "LSP Installer Info" },
 		q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Show Quickfix(es) list" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename all references" },
-		s = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
+		s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
+		S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
 	},
 	p = {
 		name = "Packer",
