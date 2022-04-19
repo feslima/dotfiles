@@ -13,15 +13,23 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Javascript/Typescript
 		formatting.prettier,
 		-- diagnostics.eslint,
+
+		-- Python
 		formatting.black, -- [pyenv/venv] shell: python -m -pip install black
 		-- diagnostics.mypy, -- [pyenv/venv] shell: python -m -pip install mypy
+
+		-- Lua
 		formatting.stylua, -- [rust] shell: cargo install stylua
 
 		-- markdown
 		formatting.markdownlint, -- [node/npm] shell: npm install -g markdownlint-cli
 		diagnostics.markdownlint,
+
+		-- TOML
+		formatting.taplo, -- [rust] shell: cargo install taplo-cli
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then

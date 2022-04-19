@@ -78,6 +78,7 @@ nvim_tree.setup({
 	filters = {
 		dotfiles = false,
 		custom = {
+			".git",
 			"__pycache__",
 			".pytest_cache",
 			"venv",
