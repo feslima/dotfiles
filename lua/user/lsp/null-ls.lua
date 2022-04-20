@@ -18,7 +18,9 @@ null_ls.setup({
 		-- diagnostics.eslint,
 
 		-- Python
+		formatting.isort, -- [pyenv/venv] shell: python -m -pip install isort
 		formatting.black, -- [pyenv/venv] shell: python -m -pip install black
+		diagnostics.flake8, -- [pyenv/venv] shell: python -m -pip install flake8
 		-- diagnostics.mypy, -- [pyenv/venv] shell: python -m -pip install mypy
 
 		-- Lua
