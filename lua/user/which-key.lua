@@ -53,6 +53,22 @@ local mappings = {
 		name = "Git",
 		b = { "<cmd>Telescope git_branches<CR>", "List branches" },
 		c = { "<cmd>Telescope git_commits<CR>", "List commits" },
+		d = {
+			name = "Diff view",
+			c = { "<cmd>DiffviewClose<CR>", "Close the current diffview" },
+      f = {"<cmd>DiffviewFileHistory<CR>", "Opens the current file history view"},
+			h = {
+				function()
+					vim.ui.input(
+						{ prompt = "Enter number of commits (x) from HEAD [HEAD~x]:", default = "1" },
+						function(input)
+							vim.cmd("DiffviewOpen HEAD~" .. input)
+						end
+					)
+				end,
+				"Open diffview against HEAD",
+			},
+		},
 		s = { "<cmd>Telescope git_status<CR>", "Show git status" },
 		l = { "<cmd> lua _LAZYGIT_TOGGLE()<CR>", "Toggle LazyGit Terminal" },
 		h = {
