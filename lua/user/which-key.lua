@@ -122,6 +122,7 @@ local mappings = {
 	u = {
 		name = "Terminal utils",
 		d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
+		f = { "<cmd>Telescope termfinder<CR>", "Find terminals" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
 }
