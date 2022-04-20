@@ -66,10 +66,34 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 
-	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- Go to declaration under cursor
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- Go to definition under cursor
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) --
-	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	keymap(
+		bufnr,
+		"n",
+		"gD",
+		"<cmd>lua vim.lsp.buf.declaration()<CR>",
+		vim.tbl_extend("force", opts, { desc = "Go to declaration under cursor" })
+	)
+	keymap(
+		bufnr,
+		"n",
+		"gd",
+		"<cmd>lua vim.lsp.buf.definition()<CR>",
+		vim.tbl_extend("force", opts, { desc = "Go to definition under cursor" })
+	)
+	keymap(
+		bufnr,
+		"n",
+		"K",
+		"<cmd>lua vim.lsp.buf.hover()<CR>",
+		vim.tbl_extend("force", opts, { desc = "Show hover info" })
+	)
+	keymap(
+		bufnr,
+		"n",
+		"gi",
+		"<cmd>lua vim.lsp.buf.implementation()<CR>",
+		vim.tbl_extend("force", opts, { desc = "Show in quickfix implementations of symbol under cursor" })
+	)
 	-- 'gl' in normal mode shows the line diagnostics under cursor
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(0, { border = "rounded" })<CR>', opts)
 	-- go to next diagnostic line and open the float
@@ -100,7 +124,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-	vim.notify("Couldn't load cmp_nvim_lsp in lsp/handlers.lua!")
+	vim.notify("Couldn't load cmp_nvim_lsp in lsp/handlers.lua!", "error")
 	return
 end
 
