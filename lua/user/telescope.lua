@@ -8,13 +8,14 @@ end
 telescope.load_extension("media_files")
 telescope.load_extension("notify")
 telescope.load_extension("dap")
+telescope.load_extension("termfinder")
 
 telescope.setup({
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-		file_ignore_patterns = { "node_modules", ".git", "venv", ".venv" },
+		file_ignore_patterns = { "node_modules", ".git", "venv", ".venv", "package-lock.json" },
 
 		extensions = {
 			media_files = {

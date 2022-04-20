@@ -106,6 +106,10 @@ return packer.startup(function(use)
 
 	-- Toggleterm
 	use("akinsho/toggleterm.nvim") -- allows terminal use when editing in nvim
+  use({'tknightz/telescope-termfinder.nvim', requires = {
+    "nvim-telescope/telescope.nvim",
+    "akinsho/toggleterm.nvim"
+  }})
 
 	-- Project
 	use("ahmedkhalf/project.nvim") -- allows project-like management
