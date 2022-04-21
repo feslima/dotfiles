@@ -44,6 +44,12 @@ local location = {
 	padding = 0,
 }
 
+local filename = {
+	"filename",
+	file_status = true, -- displays file status (readonly status, modified status)
+	path = 2, -- 0 = just filename, 1 = relative path, 2 = absolute path
+}
+
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
@@ -66,7 +72,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { "mode" },
-		lualine_c = { "filename" },
+		lualine_c = { filename },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
