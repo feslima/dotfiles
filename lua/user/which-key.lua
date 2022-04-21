@@ -56,7 +56,7 @@ local mappings = {
 		d = {
 			name = "Diff view",
 			c = { "<cmd>DiffviewClose<CR>", "Close the current diffview" },
-      f = {"<cmd>DiffviewFileHistory<CR>", "Opens the current file history view"},
+			f = { "<cmd>DiffviewFileHistory<CR>", "Opens the current file history view" },
 			h = {
 				function()
 					vim.ui.input(
@@ -95,6 +95,15 @@ local mappings = {
 		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename all references" },
 		s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
 		S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
+	},
+	m = {
+		name = "Minimap",
+		o = { "<cmd>Minimap<CR>", "Show minimap window" },
+		c = { "<cmd>MinimapClose<CR>", "Close minimap window" },
+		t = { "<cmd>MinimapToggle<CR>", "Toggle minimap window" },
+		r = { "<cmd>MinimapRefresh<CR>", "Refresh minimap window" },
+		u = { "<cmd>MinimapUpdateHightlight<CR>", "Update minimap highlight" },
+		s = { "<cmd>MinimapRescan<CR>", "Recalculate minimap scaling ratio" },
 	},
 	p = {
 		name = "Packer",

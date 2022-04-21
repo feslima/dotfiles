@@ -85,7 +85,7 @@ return packer.startup(function(use)
 
 	-- Git plugins
 	use("lewis6991/gitsigns.nvim") -- git decorations similar to VSCode
-  use ({ 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }) -- tabpage interface for diff cycling
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }) -- tabpage interface for diff cycling
 
 	-- Nvim-Tree
 	use({
@@ -107,10 +107,13 @@ return packer.startup(function(use)
 
 	-- Toggleterm
 	use("akinsho/toggleterm.nvim") -- allows terminal use when editing in nvim
-  use({'tknightz/telescope-termfinder.nvim', requires = {
-    "nvim-telescope/telescope.nvim",
-    "akinsho/toggleterm.nvim"
-  }})
+	use({
+		"tknightz/telescope-termfinder.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim",
+			"akinsho/toggleterm.nvim",
+		},
+	})
 
 	-- Project
 	use("ahmedkhalf/project.nvim") -- allows project-like management
@@ -149,6 +152,9 @@ return packer.startup(function(use)
 
 	-- Testing
 	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
+
+	-- Minimap
+	use("wfxr/minimap.vim") -- Minimap on screen side (requires: https://github.com/wfxr/code-minimap)
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
