@@ -153,9 +153,6 @@ return packer.startup(function(use)
 	-- Testing
 	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
 
-	-- Minimap
-	use("wfxr/minimap.vim") -- Minimap on screen side (requires: https://github.com/wfxr/code-minimap)
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
