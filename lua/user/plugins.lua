@@ -153,6 +153,9 @@ return packer.startup(function(use)
 	-- Testing
 	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
 
+	-- Pretty-fold
+	use({ "anuvyklack/pretty-fold.nvim" }) -- enables code folding
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
