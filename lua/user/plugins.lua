@@ -142,7 +142,8 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- UI for nvim-dap
 
 	-- Dressing
-	use("stevearc/dressing.nvim") -- better input/select UI
+	-- use("stevearc/dressing.nvim") -- better input/select UI
+	use("/home/felipe/dressing.nvim") -- FIXME: when https://github.com/stevearc/dressing.nvim/issues/36 is solved
 
 	-- Notifications
 	use("rcarriga/nvim-notify") -- messages as notifications
