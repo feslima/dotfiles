@@ -14,7 +14,7 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "float",
+	direction = "horizontal",
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
@@ -30,12 +30,6 @@ if not term_status_ok then
 end
 
 local Terminal = term_util.Terminal
-
-local check_executable_availability = function(name)
-	if vim.fn.executable(name) == 0 then
-		vim.notify("Couldn't locate '" .. name .. "'!", "error")
-	end
-end
 
 local lazygit = Terminal:new({
 	cmd = "lazygit",
@@ -53,7 +47,10 @@ local lazygit = Terminal:new({
 })
 
 function _LAZYGIT_TOGGLE()
-	check_executable_availability("lazygit")
+	if vim.fn.executable("lazygit") == 0 then
+		vim.notify("Couldn't locate 'lazygit'!", "error")
+    return
+	end
 	lazygit:toggle()
 end
 
@@ -73,6 +70,26 @@ local lazydocker = Terminal:new({
 })
 
 function _LAZYDOCKER_TOGGLE()
-	check_executable_availability("lazydocker")
+	if vim.fn.executable("lazydocker") == 0 then
+		vim.notify("Couldn't locate 'lazydocker'!", "error")
+    return
+	end
 	lazydocker:toggle()
+end
+
+local cypress = Terminal:new({
+	cmd = "$(npm bin)/cypress open",
+	direction = "horizontal",
+	close_on_exit = true,
+})
+
+function _CYPRESS_TOGGLE()
+  local cwd = vim.fn.getcwd()
+  local node_mod_bin_path = cwd .. "/node_modules/.bin"
+  if not vim.fn.isdirectory(node_mod_bin_path) then
+    vim.notify("'node_modules' folder not found!", "error")
+    return
+  end
+
+	cypress:toggle()
 end
