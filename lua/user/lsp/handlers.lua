@@ -62,58 +62,17 @@ local function lsp_highlight_document(client)
 	end
 end
 
-local function lsp_keymaps(bufnr)
-	local opts = { noremap = true, silent = true }
-	local keymap = vim.api.nvim_buf_set_keymap
-
-	keymap(
-		bufnr,
-		"n",
-		"gD",
-		"<cmd>lua vim.lsp.buf.declaration()<CR>",
-		vim.tbl_extend("force", opts, { desc = "Go to declaration under cursor" })
-	)
-	keymap(
-		bufnr,
-		"n",
-		"gd",
-		"<cmd>lua vim.lsp.buf.definition()<CR>",
-		vim.tbl_extend("force", opts, { desc = "Go to definition under cursor" })
-	)
-	keymap(
-		bufnr,
-		"n",
-		"K",
-		"<cmd>lua vim.lsp.buf.hover()<CR>",
-		vim.tbl_extend("force", opts, { desc = "Show hover info" })
-	)
-	keymap(
-		bufnr,
-		"n",
-		"gi",
-		"<cmd>lua vim.lsp.buf.implementation()<CR>",
-		vim.tbl_extend("force", opts, { desc = "Show in quickfix implementations of symbol under cursor" })
-	)
-	-- 'gl' in normal mode shows the line diagnostics under cursor
-	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(0, { border = "rounded" })<CR>', opts)
-	-- go to next diagnostic line and open the float
-	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ float = { border = "rounded" }})<CR>', opts)
-	-- go to previous diagnostic line and open the float
-	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ float = { border = "rounded" }})<CR>', opts)
-end
+local function lsp_keymaps(bufnr) end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		-- configurations specific to the TypeScript server
+	local disabled_formatting = { "tsserver", "sumneko_lua", "taplo" }
+	if vim.tbl_contains(disabled_formatting, client.name) then
 		client.resolved_capabilities.document_formatting = false
 	end
 
-	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
-	end
-
-	if client.name == "taplo" then
-		client.resolved_capabilities.document_formatting = false
+	local disabled_range_formatting = { "sumneko_lua" }
+	if vim.tbl_contains(disabled_range_formatting, client.name) then
+		client.resolved_capabilities.document_range_formatting = false
 	end
 
 	lsp_keymaps(bufnr)

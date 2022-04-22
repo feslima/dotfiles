@@ -1,29 +1,13 @@
-local status_ok, which_key = pcall(require, "which-key")
-if not status_ok then
-	vim.notify("Couldn't load 'which-key' plugin!")
-	return
-end
-
--- https://github.com/folke/which-key.nvim#%EF%B8%8F-configuration
-local setup_configs = {
-	presets = {
-		operators = false,
-	},
-	window = {
-		border = "rounded",
-	},
-}
-
-local opts = {
+local M = {
+opts = {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
-}
-
-local mappings = {
+},
+  mappings = {
 	F = { "<cmd>Telescope live_grep theme=ivy<CR>", "Find Text" },
 	P = { "<cmd>Telescope projects<CR>", "Open projects" },
 	b = {
@@ -36,6 +20,37 @@ local mappings = {
 		n = { "<cmd>bn<CR>", "Next buffer" },
 		p = { "<cmd>bp<CR>", "Previous buffer" },
 		u = { "<cmd>checktime<CR>", "Update buffer" },
+	},
+	c = {
+		name = "Code",
+		a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
+		d = { "<cmd>lua vim.diagnostic.open_float(0, { border = 'rounded' })<CR>", "Line diagnostics" },
+		f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format buffer" },
+		g = {
+			name = "Go to actions",
+			d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition under cursor" },
+			i = {
+				"<cmd>lua vim.lsp.buf.implementation()<CR>",
+				"Show in quickfix implementations of symbol under cursor",
+			},
+			n = {
+				"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>",
+				"Go to next diagnostic",
+			},
+			p = {
+				"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>",
+				"Go to previous diagnostic",
+			},
+			v = {
+				"<cmd>vsplit | lua vim.lsp.buf.definition()<CR>",
+				"Open definition under cursor in vertical buffer",
+			},
+		},
+		h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover information" },
+		q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Show Quickfix(es) list" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+		s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
+		S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
 	},
 	d = {
 		name = "Debugging",
@@ -87,15 +102,9 @@ local mappings = {
 	h = { "<cmd>nohlsearch<CR>", "Clear highlight search" },
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
-		f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format buffer" },
-		h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover information" },
 		i = { "<cmd>LspInfo<CR>", "LSP Info" },
 		I = { "<cmd>LspInstallInfo<CR>", "LSP Installer Info" },
-		q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Show Quickfix(es) list" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename all references" },
-		s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
-		S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
+		n = { "<cmd>NullLsInfo<CR>", "Null-LS info" },
 	},
 	m = {
 		name = "Minimap",
@@ -106,6 +115,7 @@ local mappings = {
 		u = { "<cmd>MinimapUpdateHightlight<CR>", "Update minimap highlight" },
 		s = { "<cmd>MinimapRescan<CR>", "Recalculate minimap scaling ratio" },
 	},
+	o = { "<cmd>only<CR>", "Close all other windows except the current one" },
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<CR>", "Compile" },
@@ -153,6 +163,6 @@ local mappings = {
 		f = { "<cmd>Telescope termfinder<CR>", "Find terminals" },
 	},
 	w = { "<cmd>w<CR>", "Save" },
-}
-which_key.setup(setup_configs)
-which_key.register(mappings, opts)
+}}
+
+return M
