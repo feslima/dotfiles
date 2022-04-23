@@ -1,10 +1,12 @@
 local g = vim.g
-
 g.ultest_icons = 1
 g.ultest_pass_sign = ""
 g.ultest_fail_sign = ""
 g.ultest_running_sign = ""
 g.ultest_not_run_sign = ""
+
+-- this discovers all files as valid test files
+g["test#python#pytest#file_pattern"] = [[\v.+\.py$]]
 
 local status_ok, ultest = pcall(require, "ultest")
 if not status_ok then
