@@ -142,8 +142,7 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- UI for nvim-dap
 
 	-- Dressing
-	-- use("stevearc/dressing.nvim") -- better input/select UI
-	use("/home/felipe/dressing.nvim") -- FIXME: when https://github.com/stevearc/dressing.nvim/issues/36 is solved
+	use("stevearc/dressing.nvim") -- better input/select UI
 
 	-- Notifications
 	use("rcarriga/nvim-notify") -- messages as notifications
@@ -157,8 +156,8 @@ return packer.startup(function(use)
 	-- Pretty-fold
 	use({ "anuvyklack/pretty-fold.nvim" }) -- enables code folding
 
-  -- Todo-comments
-  use({"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"})
+	-- Todo-comments
+	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
