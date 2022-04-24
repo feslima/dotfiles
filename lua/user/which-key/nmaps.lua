@@ -105,6 +105,7 @@ local M = {
 			i = { "<cmd>LspInfo<CR>", "LSP Info" },
 			I = { "<cmd>LspInstallInfo<CR>", "LSP Installer Info" },
 			n = { "<cmd>NullLsInfo<CR>", "Null-LS info" },
+			r = { "<cmd>LspRestart<CR>", "Restart LSP server" },
 		},
 		m = {
 			name = "Minimap",
