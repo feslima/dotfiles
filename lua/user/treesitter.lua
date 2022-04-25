@@ -21,6 +21,7 @@ configs.setup({
 		"rust",
 		"toml",
 		"typescript",
+    "tsx",
 		"yaml",
 	},
 	sync_install = false,
