@@ -15,7 +15,15 @@ telescope.setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
-		file_ignore_patterns = { "node_modules", ".git", "venv", ".venv", "package-lock.json" },
+		file_ignore_patterns = {
+			"node_modules",
+			[[\.git]],
+			"venv",
+			[[\.venv]],
+			"package-lock.json",
+			"__pycache__",
+			[[\.pytest_cache]],
+		},
 
 		extensions = {
 			media_files = {
