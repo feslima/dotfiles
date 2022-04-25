@@ -49,7 +49,7 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim") -- Smart commant actions for code
 
 	-- Colorscheme
-	use("LunarVim/darkplus.nvim") -- Very similar with VSCode colors (you need TreeSiter to have good syntax highlighting
+	use("Mofiqul/vscode.nvim") -- Very similar with VSCode colors (you need TreeSiter to have good syntax highlighting
 
 	-- Code completion (cmp)
 	use("hrsh7th/nvim-cmp") -- The completion plugin
