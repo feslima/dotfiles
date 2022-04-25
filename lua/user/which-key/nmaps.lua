@@ -41,6 +41,7 @@ local M = {
 					"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>",
 					"Go to previous diagnostic",
 				},
+				r = { "<cmd>Telescope lsp_references<CR>", "References under cursor" },
 				v = {
 					"<cmd>vsplit | lua vim.lsp.buf.definition()<CR>",
 					"Open definition under cursor in vertical buffer",
@@ -145,6 +146,7 @@ local M = {
 			p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
 			s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
 			o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
+			O = { "<cmd>call ultest#output#jumpto()<CR>", "Output (scrollable) of test nearest to cursor" },
 		},
 		T = {
 			name = "Trouble",
