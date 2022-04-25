@@ -15,6 +15,7 @@ null_ls.setup({
 	sources = {
 		-- Javascript/Typescript
 		formatting.prettier,
+		formatting.rustywind, -- [node/npm] shell: npm install -g rustywind
 		-- diagnostics.eslint,
 
 		-- Python
