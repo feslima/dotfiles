@@ -70,6 +70,16 @@ local M = {
 			name = "Git",
 			b = { "<cmd>Telescope git_branches<CR>", "List branches" },
 			c = { "<cmd>Telescope git_commits<CR>", "List commits" },
+			C = {
+				name = "Conflicts tools",
+				c = { "<cmd>GitConflictChooseOurs<CR>", "Select current changes" },
+				i = { "<cmd>GitConflictChooseTheirs<CR>", "Select incoming changes" },
+				b = { "<cmd>GitConflictChooseBoth<CR>", "Select both changes" },
+				N = { "<cmd>GitConflictChooseNone<CR>", "Select none of the changes" },
+				n = { "<cmd>GitConflictNextConflict<CR>", "Move to next conflict" },
+				p = { "<cmd>GitConflictPrevConflict<CR>", "Move to previous conflict" },
+				q = { "<cmd>GitConflictListQf<CR>", "Show all conflicts in quickfix" },
+			},
 			d = {
 				name = "Diff view",
 				c = { "<cmd>DiffviewClose<CR>", "Close the current diffview" },
