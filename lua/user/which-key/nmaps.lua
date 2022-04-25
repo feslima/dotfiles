@@ -162,7 +162,7 @@ local M = {
 		},
 		u = {
 			name = "Terminal utils",
-			a = { "<cmd>ToggleTermToggleAll", "Toggle all terminals" },
+			a = { "<cmd>ToggleTermToggleAll<CR>", "Toggle all terminals" },
 			c = { "<cmd>lua _CYPRESS_TOGGLE()<CR>", "Open/toggle cypress panel" },
 			d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<CR>", "Toggle LazyDocker Terminal" },
 			f = { "<cmd>Telescope termfinder<CR>", "Find terminals" },
