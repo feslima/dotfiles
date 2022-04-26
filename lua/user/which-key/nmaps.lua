@@ -150,6 +150,7 @@ local M = {
 		t = {
 			name = "Test utilities",
 			a = { "<cmd>Ultest<CR>", "Run all tests in file" },
+			A = { "<cmd>TestSuite<CR>", "Run all tests in suite" },
 			d = { "<cmd>UltestDebugNearest<CR>", "Debug nearest test to cursor" },
 			n = { "<cmd>UltestNearest<CR>", "Run nearest test to cursor" },
 			c = { "<cmd>UltestClear<CR>", "Clear test results" },
