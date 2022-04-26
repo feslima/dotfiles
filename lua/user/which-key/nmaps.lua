@@ -63,7 +63,7 @@ local M = {
 		},
 		e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<CR>",
+			"<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
 			"Find files",
 		},
 		g = {
