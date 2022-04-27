@@ -144,8 +144,15 @@ local M = {
 			h = { "<cmd>Telescope help_tags<CR>", "List available help tags" },
 			n = { "<cmd>Telescope notify theme=ivy<CR>", "Notifications history" },
 			r = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files" },
+			s = { "<cmd>Telescope session-lens search_session<CR>", "Sessions" },
 			k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
 			t = { "<cmd>TodoTelescope<CR>", "TODOs" },
+		},
+		S = {
+			name = "Session management",
+			s = { "<cmd>SaveSession<CR>", "Save session" },
+			r = { "<cmd>RestoreSession<CR>", "Restore session" },
+			d = { "<cmd>DeleteSession<CR>", "Delete session" },
 		},
 		t = {
 			name = "Test utilities",
