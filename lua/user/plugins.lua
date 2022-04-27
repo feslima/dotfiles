@@ -160,6 +160,9 @@ return packer.startup(function(use)
 	-- Todo-comments
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
+	-- Session management
+	use("rmagatti/auto-session")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
