@@ -5,7 +5,7 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	size = 20,
+	size = 15,
 	open_mapping = [[<C-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -49,7 +49,7 @@ local lazygit = Terminal:new({
 function _LAZYGIT_TOGGLE()
 	if vim.fn.executable("lazygit") == 0 then
 		vim.notify("Couldn't locate 'lazygit'!", "error")
-    return
+		return
 	end
 	lazygit:toggle()
 end
@@ -72,7 +72,7 @@ local lazydocker = Terminal:new({
 function _LAZYDOCKER_TOGGLE()
 	if vim.fn.executable("lazydocker") == 0 then
 		vim.notify("Couldn't locate 'lazydocker'!", "error")
-    return
+		return
 	end
 	lazydocker:toggle()
 end
@@ -84,12 +84,12 @@ local cypress = Terminal:new({
 })
 
 function _CYPRESS_TOGGLE()
-  local cwd = vim.fn.getcwd()
-  local node_mod_bin_path = cwd .. "/node_modules/.bin"
-  if not vim.fn.isdirectory(node_mod_bin_path) then
-    vim.notify("'node_modules' folder not found!", "error")
-    return
-  end
+	local cwd = vim.fn.getcwd()
+	local node_mod_bin_path = cwd .. "/node_modules/.bin"
+	if not vim.fn.isdirectory(node_mod_bin_path) then
+		vim.notify("'node_modules' folder not found!", "error")
+		return
+	end
 
 	cypress:toggle()
 end
