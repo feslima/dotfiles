@@ -6,3 +6,5 @@ end
 spellsitter.setup({})
 
 vim.cmd(":set spell")
+
+vim.api.nvim_create_autocmd("TermOpen", { pattern = "term://*", command = "setlocal nospell" })
