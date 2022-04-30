@@ -13,10 +13,12 @@ local M = {
 		b = {
 			name = "Buffers",
 			c = { "<cmd>Bdelete!<CR>", "Close buffer" },
+			C = { "<cmd>wa <bar> %bd <bar> e# <bar> bd#<CR>", "Close all other buffers" },
 			f = {
 				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
 				"Navigate buffers (Telescope)",
 			},
+			g = { "<cmd>BufferLinePick<CR>", "Go to buffer" },
 			n = { "<cmd>bn<CR>", "Next buffer" },
 			p = { "<cmd>bp<CR>", "Previous buffer" },
 			u = { "<cmd>checktime<CR>", "Update buffer" },
