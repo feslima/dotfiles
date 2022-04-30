@@ -79,6 +79,7 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("p00f/nvim-ts-rainbow")
+	use({ "lewis6991/spellsitter.nvim", requires = "nvim-treesitter/nvim-treesitter" }) -- enables builtin spellchecker into treesitter
 
 	-- Additional comment utilities
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- To differentiate in files with multilanguages embedded (e.g. .tsx, .vue)
