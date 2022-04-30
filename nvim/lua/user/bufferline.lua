@@ -93,6 +93,10 @@ bufferline.setup({
 			guifg = { attribute = "fg", highlight = "Directory" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
+		duplicate_visible = {
+			guifg = { attribute = "fg", highlight = "BufferVisible" },
+			guibg = { attribute = "bg", highlight = "Normal" },
+		},
 		duplicate_selected = {
 			guifg = { attribute = "fg", highlight = "BufferVisible" },
 			guibg = { attribute = "bg", highlight = "Normal" },
