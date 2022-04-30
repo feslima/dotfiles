@@ -23,7 +23,7 @@ bufferline.setup({
 		tab_size = 21,
 		diagnostics = "nvim_lsp",
 		diagnostics_update_in_insert = false,
-		offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+		offsets = { { filetype = "NvimTree", text = "File Explorer", padding = 1 } },
 		show_buffer_icons = true,
 		show_buffer_close_icons = true,
 		show_buffer_default_icon = true,
@@ -36,51 +36,46 @@ bufferline.setup({
 	},
 	highlights = {
 		fill = {
-			guifg = { attribute = "fg", highlight = "#ff0000" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
+			guifg = { attribute = "fg", highlight = "Normal" },
+			guibg = { attribute = "bg", highlight = "StatusLineNC" },
 		},
 		background = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
+			guifg = { attribute = "fg", highlight = "Normal" },
+			guibg = { attribute = "bg", highlight = "StatusLine" },
 		},
 		buffer_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		close_button = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		close_button_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		tab = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		tab_selected = {
+			gui = "italic",
 			guifg = { attribute = "fg", highlight = "Normal" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
-		tab_close = {
-			guifg = { attribute = "fg", highlight = "TabLineSel" },
+		buffer_selected = {
+			gui = "bold",
+			guifg = { attribute = "fg", highlight = "Normal" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
-		duplicate_selected = {
-			guifg = { attribute = "fg", highlight = "TabLineSel" },
-			guibg = { attribute = "bg", highlight = "TabLineSel" },
-			gui = "italic",
+		separator = {
+			guifg = { attribute = "bg", highlight = "Normal" },
+			guibg = { attribute = "bg", highlight = "StatusLine" },
 		},
-		duplicate_visible = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-			gui = "italic",
+		separator_selected = {
+			guifg = { attribute = "fg", highlight = "Special" },
+			guibg = { attribute = "bg", highlight = "Normal" },
 		},
-		duplicate = {
-			guifg = { attribute = "fg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-			gui = "italic",
+		separator_visible = {
+			guifg = { attribute = "fg", highlight = "Normal" },
+			guibg = { attribute = "bg", highlight = "StatusLineNC" },
+		},
+		close_button = {
+			guifg = { attribute = "fg", highlight = "Normal" },
+			guibg = { attribute = "bg", highlight = "StatusLine" },
+		},
+		close_button_selected = {
+			guifg = { attribute = "fg", highlight = "normal" },
+			guibg = { attribute = "bg", highlight = "normal" },
+		},
+		close_button_visible = {
+			guifg = { attribute = "fg", highlight = "normal" },
+			guibg = { attribute = "bg", highlight = "normal" },
 		},
 		modified = {
 			guifg = { attribute = "fg", highlight = "TabLine" },
@@ -94,16 +89,16 @@ bufferline.setup({
 			guifg = { attribute = "fg", highlight = "TabLine" },
 			guibg = { attribute = "bg", highlight = "TabLine" },
 		},
-		separator = {
-			guifg = { attribute = "bg", highlight = "TabLine" },
-			guibg = { attribute = "bg", highlight = "TabLine" },
-		},
-		separator_selected = {
-			guifg = { attribute = "bg", highlight = "Normal" },
+		indicator_selected = {
+			guifg = { attribute = "fg", highlight = "Directory" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
-		indicator_selected = {
-			guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
+		duplicate_selected = {
+			guifg = { attribute = "fg", highlight = "BufferVisible" },
+			guibg = { attribute = "bg", highlight = "Normal" },
+		},
+		duplicate = {
+			guifg = { attribute = "fg", highlight = "BufferVisible" },
 			guibg = { attribute = "bg", highlight = "Normal" },
 		},
 	},
