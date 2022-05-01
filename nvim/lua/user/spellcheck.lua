@@ -8,3 +8,7 @@ spellsitter.setup({})
 vim.cmd(":set spell")
 
 vim.api.nvim_create_autocmd("TermOpen", { pattern = "term://*", command = "setlocal nospell" })
+vim.api.nvim_create_autocmd(
+	"FileType",
+	{ pattern = vim.g.indent_blankline_filetype_exlcude, command = "setlocal nospell" }
+)
