@@ -156,7 +156,7 @@ return packer.startup(function(use)
 	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
 
 	-- Pretty-fold
-	use({ "anuvyklack/pretty-fold.nvim" }) -- enables code folding
+	use({ "anuvyklack/pretty-fold.nvim", requires = "anuvyklack/nvim-keymap-amend" }) -- enables code folding
 
 	-- Todo-comments
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
