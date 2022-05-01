@@ -94,3 +94,4 @@ vim.api.nvim_set_keymap("n", "<F7>", "", {
 })
 
 require("user.dap.ui")
+require("user.dap.dap-python")

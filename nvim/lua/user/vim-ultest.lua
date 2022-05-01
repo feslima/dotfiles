@@ -23,7 +23,7 @@ ultest.setup({
 			if vim.tbl_contains(non_modules, cmd[1]) then
 				module_index = 3
 			end
-			local module = "pytest" -- locking with pytest (for now)
+			local module = cmd[module_index]
 
 			-- Remaining elements are arguments to the module
 			local args = vim.list_slice(cmd, module_index + 1)
