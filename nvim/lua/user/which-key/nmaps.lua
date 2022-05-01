@@ -22,6 +22,7 @@ local M = {
 			n = { "<cmd>bn<CR>", "Next buffer" },
 			p = { "<cmd>bp<CR>", "Previous buffer" },
 			u = { "<cmd>checktime<CR>", "Update buffer" },
+			x = { "<cmd>BufferLinePickClose<CR>", "Close a buffer (pick)" },
 		},
 		c = {
 			name = "Code",
