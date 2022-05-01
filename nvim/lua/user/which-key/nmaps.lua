@@ -51,6 +51,7 @@ local M = {
 				},
 			},
 			h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover information" },
+			o = { "<cmd>SymbolsOutline<CR>", "Show code outlines" },
 			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Show Quickfix(es) list" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
@@ -130,7 +131,7 @@ local M = {
 			u = { "<cmd>MinimapUpdateHightlight<CR>", "Update minimap highlight" },
 			s = { "<cmd>MinimapRescan<CR>", "Recalculate minimap scaling ratio" },
 		},
-		o = { "<cmd>only<CR>", "Close all other windows except the current one" },
+		O = { "<cmd>only<CR>", "Close all other windows except the current one" },
 		p = {
 			name = "Packer",
 			c = { "<cmd>PackerCompile<CR>", "Compile" },

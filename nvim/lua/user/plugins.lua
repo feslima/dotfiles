@@ -165,6 +165,9 @@ return packer.startup(function(use)
 	use("rmagatti/auto-session")
 	use({ "rmagatti/session-lens", requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" } })
 
+	-- Code outlines
+	use("simrat39/symbols-outline.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
