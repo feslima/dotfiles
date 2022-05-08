@@ -172,6 +172,9 @@ return packer.startup(function(use)
 	-- Lightbulb
 	use("kosayoda/nvim-lightbulb") -- code actions like VSCode
 
+	-- Environment variables
+	use({ "LinArcX/telescope-env.nvim", requires = "nvim-telescope/telescope.nvim" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

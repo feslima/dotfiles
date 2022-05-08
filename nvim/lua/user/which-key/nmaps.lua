@@ -123,13 +123,8 @@ local M = {
 			r = { "<cmd>LspRestart<CR>", "Restart LSP server" },
 		},
 		m = {
-			name = "Minimap",
-			o = { "<cmd>Minimap<CR>", "Show minimap window" },
-			c = { "<cmd>MinimapClose<CR>", "Close minimap window" },
-			t = { "<cmd>MinimapToggle<CR>", "Toggle minimap window" },
-			r = { "<cmd>MinimapRefresh<CR>", "Refresh minimap window" },
-			u = { "<cmd>MinimapUpdateHightlight<CR>", "Update minimap highlight" },
-			s = { "<cmd>MinimapRescan<CR>", "Recalculate minimap scaling ratio" },
+			name = "Monitoring",
+			e = { "<cmd>Telescope env<CR>", "Current environment variables" },
 		},
 		O = { "<cmd>only<CR>", "Close all other windows except the current one" },
 		p = {

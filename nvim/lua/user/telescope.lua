@@ -10,6 +10,7 @@ telescope.load_extension("notify")
 telescope.load_extension("dap")
 telescope.load_extension("termfinder")
 telescope.load_extension("session-lens")
+telescope.load_extension("env")
 
 telescope.setup({
 	defaults = {
