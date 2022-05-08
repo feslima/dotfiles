@@ -164,6 +164,33 @@ local M = {
 			s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
 			o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
 			O = { "<cmd>call ultest#output#jumpto()<CR>", "Output (scrollable) of test nearest to cursor" },
+			C = {
+				name = "Configurations",
+				e = {
+					function()
+						vim.ui.input({ prompt = "Type the file path", completion = "file" }, function(input)
+							if input == nil then
+								vim.notify("File path not specified!", "error")
+								return
+							end
+							_G.set_test_environment_from_file(input)
+						end)
+					end,
+					"Load test environment variables from file.",
+				},
+				E = {
+					function()
+						local loaded_envs
+						if vim.g.ultest_env == vim.NIL then
+							loaded_envs = "Nothing loaded!"
+						else
+							loaded_envs = vim.inspect(vim.g.ultest_env)
+						end
+						vim.notify(loaded_envs, "info", { title = "Loaded test environment variables:" })
+					end,
+					"Show loaded test environment variables",
+				},
+			},
 		},
 		T = {
 			name = "Trouble",
