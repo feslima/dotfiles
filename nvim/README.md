@@ -55,6 +55,10 @@ Install `lazydocker` following [these instructions](https://github.com/jesseduff
    must have them installed in their respective environments.
 3. `markdown-cli`: [This is the repo](https://github.com/igorshubovych/markdownlint-cli)
 
+## `nvim-spectre` requirements (search and replace functionality)
+
+1. Install [`ripgrep`](https://github.com/BurntSushi/ripgrep).
+
 ## Troubleshooting
 
 ### `:checkhealth` says neovim (python) is not installed
