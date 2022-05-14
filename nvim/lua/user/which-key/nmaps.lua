@@ -143,6 +143,16 @@ local M = {
 			h = { "<cmd>Telescope help_tags<CR>", "List available help tags" },
 			n = { "<cmd>Telescope notify theme=ivy<CR>", "Notifications history" },
 			r = { "<cmd>Telescope oldfiles<CR>", "Open Recent Files" },
+			R = {
+				name = "Search and Replace",
+				o = { "<cmd>lua require('spectre').open()<CR>", "Open Search and Replace panel" },
+				f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Search and Replace in current file" },
+				w = {
+					"<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+					"Search for current word under cursor",
+				},
+			},
+
 			s = { "<cmd>Telescope session-lens search_session<CR>", "Sessions" },
 			k = { "<cmd>Telescope keymaps<CR>", "Keymaps" },
 			t = { "<cmd>TodoTelescope<CR>", "TODOs" },
