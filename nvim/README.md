@@ -40,6 +40,14 @@ like this already before doing this!**
 
 Install `lazygit` following [these instructions](https://github.com/jesseduffield/lazygit#ubuntu)
 
+Or update from inside the lazygit app (if it's already installed).
+
+Or update the version in the command below with the latest release number:
+
+```shell
+wget -qO- https://github.com/jesseduffield/lazygit/releases/download/<update-this>/lazygit_<update-this>.tar.gz | sudo tar xvz -C /usr/local/bin/
+```
+
 ## Lazydocker integration
 
 Install `lazydocker` following [these instructions](https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindows)
