@@ -35,6 +35,7 @@ gui:
   showRandomTip: true
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: true
+  showIcons: true
   commandLogSize: 8
 git:
   paging:
@@ -59,7 +60,7 @@ git:
   autoFetch: true
   autoRefresh: true
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=format:%C(auto)%h - [%C(bold blue)%aN%Creset, %ad] | %s |%C(auto)%d {{branchName}} --"
-  allBranchesLogCmd: "git log --graph --all --color=always --date=relative --pretty='format:%C(auto)%h - [%C(bold blue)%aN%Creset, %ad] | %s |%C(auto)%d'"
+  allBranchesLogCmd: "git log --graph --all --color=always --date=relative --pretty='format:%C(auto)%h - [%C(bold blue)%aN%Creset, %ad]%n%C(auto)%s %C(auto)%d'"
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
   disableForcePushing: false
   parseEmoji: false
