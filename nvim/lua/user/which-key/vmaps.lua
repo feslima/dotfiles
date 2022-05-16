@@ -20,6 +20,7 @@ local M = {
 					"Extract to function to file",
 				},
 				v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract variable" },
+				V = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline variable" },
 			},
 		},
 	},

@@ -8,7 +8,7 @@ g.ultest_not_run_sign = ""
 function _G.set_test_environment_from_file(fpath)
 	local abs = _G.check_env_file_is_valid(fpath)
 
-	local collected_envs = _G._extract_variables_from_file(abs)
+	local collected_envs = _G.extract_variables_from_file(abs)
 	g.ultest_env = collected_envs
 	vim.notify(vim.inspect(collected_envs), "info", { title = "Successfuly loaded env vars from " .. abs })
 end
