@@ -16,7 +16,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		-- Javascript/Typescript
-		formatting.prettier,
+		formatting.prettier.with({ extra_filetypes = { "xhtml" } }),
 		formatting.rustywind, -- [node/npm] shell: npm install -g rustywind
 		-- diagnostics.eslint,
 
