@@ -107,12 +107,12 @@ nvim_tree.setup({
 					symlink = "",
 				},
 			},
-		},
-		show = {
-			git = true,
-			folders = true,
-			files = true,
-			folder_arrows = true,
+			show = {
+				git = true,
+				folder = true,
+				file = true,
+				folder_arrow = true,
+			},
 		},
 	},
 })
