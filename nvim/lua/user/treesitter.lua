@@ -9,6 +9,8 @@ configs.setup({
 		"bash",
 		"css",
 		"dockerfile",
+		"go",
+		"gomod",
 		"html",
 		"http",
 		"javascript",

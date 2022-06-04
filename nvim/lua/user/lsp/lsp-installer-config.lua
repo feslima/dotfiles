@@ -22,6 +22,8 @@ local installed_servers = {
 	"vimls",
 	"tailwindcss",
 	"yamlls",
+	"gopls",
+	"html",
 }
 lsp_installer.setup({
 	ensure_installed = installed_servers,

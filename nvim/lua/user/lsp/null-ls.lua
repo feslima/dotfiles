@@ -35,6 +35,9 @@ null_ls.setup({
 
 		-- TOML
 		formatting.taplo, -- [rust] shell: cargo install taplo-cli
+
+		-- GO
+		diagnostics.golangci_lint,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
