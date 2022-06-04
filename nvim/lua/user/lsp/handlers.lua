@@ -65,7 +65,7 @@ end
 local function lsp_keymaps(bufnr) end
 
 M.on_attach = function(client, bufnr)
-	local disabled_formatting = { "tsserver", "sumneko_lua", "taplo", "jsonls" }
+	local disabled_formatting = { "tsserver", "sumneko_lua", "taplo", "jsonls", "gopls" }
 	if vim.tbl_contains(disabled_formatting, client.name) then
 		client.resolved_capabilities.document_formatting = false
 	end
