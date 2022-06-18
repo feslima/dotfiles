@@ -11,13 +11,13 @@ local lsp_formatting_group_id = vim.api.nvim_create_augroup("LspFormatting", { c
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
-local code_actions = null_ls.builtins.code_actions
+-- local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
 	sources = {
 		-- Code Actions
-		code_actions.refactoring,
+		-- code_actions.refactoring,
 
 		-- Javascript/Typescript
 		formatting.prettier.with({ extra_filetypes = { "xhtml" } }),
