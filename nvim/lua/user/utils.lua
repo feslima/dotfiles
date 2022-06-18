@@ -21,6 +21,13 @@ function _G.extract_variables_from_file(fpath)
 	return collected_envs
 end
 
+---@param fpath string
+---@param ext string
+---@return boolean
+function _G.check_if_file_extension_matches(fpath, ext)
+	return fpath:match("^.+(%..+)$") == ext
+end
+
 function _G.check_env_file_is_valid(fpath)
 	local p = Path:new(fpath)
 	local abs = p:absolute()
@@ -34,7 +41,7 @@ function _G.check_env_file_is_valid(fpath)
 		return
 	end
 
-	if abs:match("^.+(%..+)$") ~= ".env" then
+	if not check_if_file_extension_matches(abs, ".env") then
 		vim.notify("Path " .. abs .. " is not a .env file.", "error")
 		return
 	end

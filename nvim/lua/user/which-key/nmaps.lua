@@ -165,15 +165,21 @@ local M = {
 		},
 		t = {
 			name = "Test utilities",
-			a = { "<cmd>Ultest<CR>", "Run all tests in file" },
-			A = { "<cmd>TestSuite<CR>", "Run all tests in suite" },
-			d = { "<cmd>UltestDebugNearest<CR>", "Debug nearest test to cursor" },
-			n = { "<cmd>UltestNearest<CR>", "Run nearest test to cursor" },
-			c = { "<cmd>UltestClear<CR>", "Clear test results" },
-			p = { "<cmd>UltestSummary<CR>", "Toggle test summary panel" },
-			s = { "<cmd>UltestStop<CR>", "Stop all running jobs for current file" },
-			o = { "<cmd>UltestOutput<CR>", "Output of test nearest to cursor" },
-			O = { "<cmd>call ultest#output#jumpto()<CR>", "Output (scrollable) of test nearest to cursor" },
+			a = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run all tests in file" },
+			A = {
+				"<cmd>lua require('neotest').run.run(vim.fn.getcwd())<CR>",
+				"Run all tests in suite (project root)",
+			},
+			d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", "Debug nearest test to cursor" },
+			n = { "<cmd>lua require('neotest').run.run()<CR>", "Run nearest test to cursor" },
+			-- c = { "<cmd>UltestClear<CR>", "Clear test results" },
+			p = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary panel" },
+			s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop all running jobs for current file" },
+			o = { "<cmd>lua require('neotest').output.open({short=true})<CR>", "Output of test nearest to cursor" },
+			O = {
+				"<cmd>lua require('neotest').output.open({enter=true})<CR>",
+				"Output (scrollable) of test nearest to cursor",
+			},
 			C = {
 				name = "Configurations",
 				e = {

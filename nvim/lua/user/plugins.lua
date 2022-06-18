@@ -154,7 +154,19 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Testing
-	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
+	use({
+		"nvim-neotest/neotest",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"vim-test/vim-test",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-neotest/neotest-vim-test",
+			"nvim-neotest/neotest-python",
+			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/neotest-go",
+		},
+	})
 
 	-- Pretty-fold
 	use({ "anuvyklack/pretty-fold.nvim", requires = "anuvyklack/nvim-keymap-amend" }) -- enables code folding
