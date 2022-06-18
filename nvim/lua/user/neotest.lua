@@ -29,18 +29,25 @@ if not status_ok_vim_test then
 	return
 end
 
+_G.test_env = {}
+
+local neotest_python_dap_configs = { justMyCode = false }
+
 function _G.set_test_environment_from_file(fpath)
 	local abs = _G.check_env_file_is_valid(fpath)
 
 	local collected_envs = _G.extract_variables_from_file(abs)
-	g.ultest_env = collected_envs
+	_G.test_env = collected_envs
+	if next(_G.test_env) ~= nil then
+		neotest_python_dap_configs["env"] = _G.test_env
+	end
 	vim.notify(vim.inspect(collected_envs), "info", { title = "Successfuly loaded env vars from " .. abs })
 end
 
 neotest.setup({
 	adapters = {
 		neotest_python({
-			dap = { justMyCode = false },
+			dap = neotest_python_dap_configs,
 			runner = "pytest",
 			is_test_file = function(file_path)
 				return _G.check_if_file_extension_matches(file_path, ".py")

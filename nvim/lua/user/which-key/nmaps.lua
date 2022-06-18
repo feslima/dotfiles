@@ -165,13 +165,19 @@ local M = {
 		},
 		t = {
 			name = "Test utilities",
-			a = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run all tests in file" },
+			a = {
+				"<cmd>lua require('neotest').run.run({vim.fn.expand('%'), env = _G.test_env })<CR>",
+				"Run all tests in file",
+			},
 			A = {
-				"<cmd>lua require('neotest').run.run(vim.fn.getcwd())<CR>",
+				"<cmd>lua require('neotest').run.run({ vim.fn.getcwd(), env = _G.test_env })<CR>",
 				"Run all tests in suite (project root)",
 			},
-			d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", "Debug nearest test to cursor" },
-			n = { "<cmd>lua require('neotest').run.run()<CR>", "Run nearest test to cursor" },
+			d = {
+				"<cmd>lua require('neotest').run.run({ strategy = 'dap', env = _G.test_env })<CR>",
+				"Debug nearest test to cursor",
+			},
+			n = { "<cmd>lua require('neotest').run.run({ env = _G.test_env })<CR>", "Run nearest test to cursor" },
 			-- c = { "<cmd>UltestClear<CR>", "Clear test results" },
 			p = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary panel" },
 			s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop all running jobs for current file" },
@@ -197,10 +203,10 @@ local M = {
 				E = {
 					function()
 						local loaded_envs
-						if vim.g.ultest_env == vim.NIL then
+						if next(_G.test_env) == nil then
 							loaded_envs = "Nothing loaded!"
 						else
-							loaded_envs = vim.inspect(vim.g.ultest_env)
+							loaded_envs = vim.inspect(_G.test_env)
 						end
 						vim.notify(loaded_envs, "info", { title = "Loaded test environment variables:" })
 					end,
