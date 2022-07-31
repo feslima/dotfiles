@@ -1,3 +1,9 @@
+local status_ok, neotest = pcall(require, "neotest")
+if not status_ok then
+	vim.notify("Couldn't load 'neotest' plugin!", "error")
+	return
+end
+
 local M = {
 	opts = {
 		mode = "n", -- NORMAL mode
@@ -177,7 +183,12 @@ local M = {
 				"<cmd>lua require('neotest').run.run({ strategy = 'dap', env = _G.test_env })<CR>",
 				"Debug nearest test to cursor",
 			},
-			n = { "<cmd>lua require('neotest').run.run({ env = _G.test_env })<CR>", "Run nearest test to cursor" },
+			n = {
+				function()
+					neotest.run.run({ env = _G.test_env })
+				end,
+				"Run nearest test to cursor",
+			},
 			-- c = { "<cmd>UltestClear<CR>", "Clear test results" },
 			p = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary panel" },
 			s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop all running jobs for current file" },

@@ -4,7 +4,7 @@ if not null_ls_status_ok then
 	return
 end
 
-local lsp_formatting_group_id = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+local lsp_formatting_group_id = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- List of supported formatters/diagnostics can be found in the links below
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -49,8 +49,8 @@ null_ls.setup({
 			vim.api.nvim_clear_autocmds({ group = lsp_formatting_group_id, buffer = bufnr })
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = lsp_formatting_group_id,
-				pattern = "<buffer>",
-				callback = vim.lsp.buf.formatting_sync,
+				buffer = bufnr,
+				callback = vim.lsp.buf.formatting,
 				desc = "Format on save if client has formatting capabilities",
 			})
 		end

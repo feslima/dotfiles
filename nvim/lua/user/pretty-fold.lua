@@ -4,6 +4,4 @@ if not status_ok then
 	return
 end
 
-local pretty_fold_preview = require("pretty-fold.preview")
-pretty_fold.setup({})
-pretty_fold_preview.setup({})
+pretty_fold.setup()

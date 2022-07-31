@@ -23,8 +23,6 @@ global_confs.indent_blankline_filetype_exclude = {
 	"dapui_watches",
 	"dapui_breakpoints",
 	"dapui_hover",
-	"UltestSummary",
-	"UltestOutput",
 }
 global_confs.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 
