@@ -44,7 +44,7 @@ end
 local function lsp_highlight_document(client)
 	-- This will highlight all instances of word/var under cursor depending on context
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.documentHighlightProvider then
 		local highlight_group_id = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
 		vim.api.nvim_clear_autocmds({ pattern = { "*", "<buffer>" }, group = highlight_group_id })
 		vim.api.nvim_create_autocmd("CursorHold", {
@@ -67,12 +67,12 @@ local function lsp_keymaps(bufnr) end
 M.on_attach = function(client, bufnr)
 	local disabled_formatting = { "tsserver", "sumneko_lua", "taplo", "jsonls", "gopls", "html" }
 	if vim.tbl_contains(disabled_formatting, client.name) then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 
 	local disabled_range_formatting = { "sumneko_lua" }
 	if vim.tbl_contains(disabled_range_formatting, client.name) then
-		client.resolved_capabilities.document_range_formatting = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 	end
 
 	lsp_keymaps(bufnr)
@@ -87,6 +87,6 @@ if not status_ok then
 	return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M

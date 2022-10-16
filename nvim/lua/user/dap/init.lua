@@ -5,9 +5,9 @@ if not status_ok then
 end
 
 -- configure breakpoints icons
-vim.highlight.create("DapBreakpoint", { ctermbg = 0, guifg = "#ff0000", guibg = "Normal" }, false)
-vim.highlight.create("DapLogPoint", { ctermbg = 0, guifg = "LspDiagnosticsDefaultHint", guibg = "Normal" }, false)
-vim.highlight.create("DapStopped", { ctermbg = 0, guifg = "#fff200", guibg = "Normal" }, false)
+vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#ff0000" })
+vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, link = "DiagnosticHint" })
+vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#fff200" })
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })

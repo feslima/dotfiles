@@ -28,11 +28,8 @@ configs.setup({
 		"yaml",
 	},
 	sync_install = false,
-	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "" }, -- list of language that will be disabled
-		additional_vim_regex_highlighting = true,
 	},
 	indent = {
 		enable = true,
@@ -43,8 +40,7 @@ configs.setup({
 	rainbow = {
 		-- https://github.com/p00f/nvim-ts-rainbow#installation-and-setup
 		enable = true,
-		extended_mode = false,
-		max_file_lines = nil,
+		extended_mode = true,
 	},
 	autopairs = {
 		-- https://github.com/windwp/nvim-autopairs

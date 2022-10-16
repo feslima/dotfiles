@@ -52,5 +52,5 @@ lightbulb.setup({
 
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, { pattern = "*", callback = lightbulb.update_lightbulb })
 
-vim.highlight.create("LighBulbHighLight", { ctermbg = 0, guifg = "#FFD679", guibg = "Normal" }, false)
+vim.api.nvim_set_hl(0, "LighBulbHighLight", { ctermbg = 0, fg = "#FFD679" })
 vim.fn.sign_define("LightBulbSign", { text = icon, texthl = "LighBulbHighLight", linehl = "", numhl = "" })

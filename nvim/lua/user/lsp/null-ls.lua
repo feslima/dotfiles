@@ -50,7 +50,9 @@ null_ls.setup({
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = lsp_formatting_group_id,
 				buffer = bufnr,
-				callback = vim.lsp.buf.formatting,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr })
+				end,
 				desc = "Format on save if client has formatting capabilities",
 			})
 		end

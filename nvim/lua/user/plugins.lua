@@ -78,6 +78,7 @@ return packer.startup(function(use)
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "nvim-treesitter/playground", requires = "nvim-treesitter/nvim-treesitter" })
 	use("p00f/nvim-ts-rainbow")
 	use({ "lewis6991/spellsitter.nvim", requires = "nvim-treesitter/nvim-treesitter" }) -- enables builtin spellchecker into treesitter
 
