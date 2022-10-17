@@ -51,7 +51,7 @@ null_ls.setup({
 				group = lsp_formatting_group_id,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
+					vim.lsp.buf.format({ bufnr = bufnr, async = true })
 				end,
 				desc = "Format on save if client has formatting capabilities",
 			})

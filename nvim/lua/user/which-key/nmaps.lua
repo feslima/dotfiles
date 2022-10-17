@@ -34,7 +34,12 @@ local M = {
 			name = "Code",
 			a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
 			d = { "<cmd>lua vim.diagnostic.open_float(0, { border = 'rounded' })<CR>", "Line diagnostics" },
-			f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format buffer" },
+			f = {
+				function()
+					vim.lsp.buf.format({ async = true })
+				end,
+				"Format buffer",
+			},
 			g = {
 				name = "Go to actions",
 				d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition under cursor" },

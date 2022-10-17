@@ -40,7 +40,7 @@ configs.setup({
 	rainbow = {
 		-- https://github.com/p00f/nvim-ts-rainbow#installation-and-setup
 		enable = true,
-		extended_mode = true,
+		extended_mode = false,
 	},
 	autopairs = {
 		-- https://github.com/windwp/nvim-autopairs

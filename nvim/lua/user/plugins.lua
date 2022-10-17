@@ -49,7 +49,8 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim") -- Smart commant actions for code
 
 	-- Colorscheme
-	use("Mofiqul/vscode.nvim") -- Very similar with VSCode colors (you need TreeSiter to have good syntax highlighting
+	-- use("Mofiqul/vscode.nvim") -- Very similar with VSCode colors (you need TreeSiter to have good syntax highlighting
+	use({ "deforde/vscode.nvim", branch = "bugfix/issue-90" }) -- until https://github.com/Mofiqul/vscode.nvim/issues/90 is merged
 
 	-- Code completion (cmp)
 	use("hrsh7th/nvim-cmp") -- The completion plugin
