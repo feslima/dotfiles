@@ -22,7 +22,7 @@ null_ls.setup({
 		-- Javascript/Typescript
 		formatting.prettier.with({ extra_filetypes = { "xhtml" } }),
 		formatting.rustywind, -- [node/npm] shell: npm install -g rustywind
-		-- diagnostics.eslint,
+		diagnostics.eslint,
 
 		-- Python
 		formatting.black, -- [pyenv/venv] shell: python -m -pip install black
