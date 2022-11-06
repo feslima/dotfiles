@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap("n", "<F10>", "", {
 	end,
 })
 
-vim.api.nvim_set_keymap("n", "<F11>", "", {
+vim.api.nvim_set_keymap("n", "<A-F11>", "", {
 	noremap = true,
 	silent = true,
 	desc = "Step into  (debugger)",
@@ -55,7 +55,7 @@ vim.api.nvim_set_keymap("n", "<F11>", "", {
 	end,
 })
 
-vim.api.nvim_set_keymap("n", "<F12>", "", {
+vim.api.nvim_set_keymap("n", "<A-F12>", "", {
 	noremap = true,
 	silent = true,
 	desc = "Step out  (debugger)",
@@ -95,3 +95,4 @@ vim.api.nvim_set_keymap("n", "<F7>", "", {
 
 require("user.dap.ui")
 require("user.dap.dap-python")
+require("user.dap.dap-go")

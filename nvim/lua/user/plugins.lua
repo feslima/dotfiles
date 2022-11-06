@@ -144,6 +144,7 @@ return packer.startup(function(use)
 	})
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- UI for nvim-dap
 	use({ "mfussenegger/nvim-dap-python", requires = { "mfussenegger/nvim-dap" } })
+	use({ "leoluz/nvim-dap-go", requires = "mfussenegger/nvim-dap" })
 
 	-- Dressing
 	use("stevearc/dressing.nvim") -- better input/select UI
