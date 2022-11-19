@@ -4,6 +4,25 @@ if not status_ok then
 	return
 end
 
+local parser_status_ok, parsers = pcall(require, "nvim-treesitter.parsers")
+if not parser_status_ok then
+	vim.notify("Couldn't load TreeSitter parser!", "error")
+	return
+end
+
+local parser_config = parsers.get_parser_configs()
+parser_config.gotmpl = {
+	install_info = {
+		url = "https://github.com/ngalaiko/tree-sitter-go-template",
+		files = { "src/parser.c" },
+		branch = "master",
+		generate_requires_npm = false,
+		requires_generate_from_grammar = false,
+	},
+	filetype = "gotmpl",
+	used_by = { "gotmpl" },
+}
+
 configs.setup({
 	ensure_installed = {
 		"bash",

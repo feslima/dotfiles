@@ -20,7 +20,7 @@ null_ls.setup({
 		-- code_actions.refactoring,
 
 		-- Javascript/Typescript
-		formatting.prettier.with({ extra_filetypes = { "xhtml" } }),
+		formatting.prettier.with({ extra_filetypes = { "xhtml", "gotmpl" } }), -- for gotmpl you will need to install globally with: npm install -g prettier-plugin-go-template
 		formatting.rustywind, -- [node/npm] shell: npm install -g rustywind
 		diagnostics.eslint,
 

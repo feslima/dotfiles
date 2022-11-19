@@ -46,6 +46,7 @@ vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- This possibly doesn't work
 
 vim.api.nvim_create_autocmd("FileType", { pattern = { "python" }, command = "set colorcolumn=88" })
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, { pattern = "*.gotmpl", command = "setfiletype gotmpl" })
 -- vim.highlight.create("ColorColumn", { ctermbg = 0, guifg = "#ff0000", guibg = "Normal" }, false)
 
 -- Global configs
