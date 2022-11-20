@@ -24,6 +24,7 @@ local installed_servers = {
 	"yamlls",
 	"gopls",
 	"html",
+	"denols",
 }
 lsp_installer.setup({
 	ensure_installed = installed_servers,

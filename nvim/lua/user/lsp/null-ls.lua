@@ -20,9 +20,25 @@ null_ls.setup({
 		-- code_actions.refactoring,
 
 		-- Javascript/Typescript
-		formatting.prettier.with({ extra_filetypes = { "xhtml", "gotmpl" } }), -- for gotmpl you will need to install globally with: npm install -g prettier-plugin-go-template
+		formatting.prettier.with({
+			extra_filetypes = { "xhtml", "gotmpl" },
+			condition = function(utils)
+				return utils.root_has_file({ "package.json" })
+			end,
+		}), -- for gotmpl you will need to install globally with: npm install -g prettier-plugin-go-template
 		formatting.rustywind, -- [node/npm] shell: npm install -g rustywind
-		diagnostics.eslint,
+		diagnostics.eslint.with({
+			condition = function(utils)
+				return utils.root_has_file({ "package.json" })
+			end,
+		}),
+
+		-- Deno specific configs
+		formatting.deno_fmt.with({
+			condition = function(utils)
+				return utils.root_has_file({ "deno.json", "deno.jsonc" })
+			end,
+		}),
 
 		-- Python
 		formatting.black, -- [pyenv/venv] shell: python -m -pip install black
