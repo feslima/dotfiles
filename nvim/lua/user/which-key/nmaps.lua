@@ -1,6 +1,12 @@
-local status_ok, neotest = pcall(require, "neotest")
-if not status_ok then
+local neotest_status_ok, neotest = pcall(require, "neotest")
+if not neotest_status_ok then
 	vim.notify("Couldn't load 'neotest' plugin!", "error")
+	return
+end
+
+local preview_status_ok, goto_preview = pcall(require, "goto-preview")
+if not preview_status_ok then
+	vim.notify("Couldn't load 'goto-preview' plugin!", "error")
 	return
 end
 
@@ -67,6 +73,27 @@ local M = {
 			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
 			S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
+			v = {
+				name = "Preview definitions/references",
+				d = {
+					function()
+						goto_preview.goto_preview_definition()
+					end,
+					"Preview definition",
+				},
+				i = {
+					function()
+						goto_preview.goto_preview_implementation()
+					end,
+					"Preview implementation",
+				},
+				r = {
+					function()
+						goto_preview.goto_preview_references()
+					end,
+					"Preview references",
+				},
+			},
 		},
 		d = {
 			name = "Debugging",
