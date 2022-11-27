@@ -3,6 +3,7 @@ local status_ok_plenary, neotest_plenary = pcall(require, "neotest-plenary")
 local status_ok_python, neotest_python = pcall(require, "neotest-python")
 local status_ok_go, neotest_go = pcall(require, "neotest-go")
 local status_ok_vim_test, neotest_vim_test = pcall(require, "neotest-vim-test")
+local status_ok_deno, neotest_deno = pcall(require, "neotest-deno")
 
 if not status_ok then
 	vim.notify("Couldn't load 'neotest' plugin!", "error")
@@ -26,6 +27,11 @@ end
 
 if not status_ok_vim_test then
 	vim.notify("Couldn't load 'neotest-vim-test' adapter plugin!", "error")
+	return
+end
+
+if not status_ok_deno then
+	vim.notify("Couldn't load 'neotest-deno' adapter plugin!", "error")
 	return
 end
 
@@ -58,6 +64,7 @@ neotest.setup({
 			ignore_file_types = { "python", "vim", "lua", "go" },
 		}),
 		neotest_go,
+		neotest_deno,
 	},
 	icons = {
 		passed = "",
