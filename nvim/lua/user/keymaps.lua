@@ -19,6 +19,10 @@ vim.g.maplocalleader = " " -- remap the literal space as leader key
 --   command_mode = "c",
 
 -- NORMAL --
+-- Vertical navigation
+keymap("n", "<C-d>", "<C-d>zz", vim.tbl_deep_extend("force", opts, { desc = "Scroll downwards in the buffer. Half screen." }))
+keymap("n", "<C-u>", "<C-u>zz", vim.tbl_deep_extend("force", opts, { desc = "Scroll upwards in the buffer. Half screen." }))
+
 -- Better window navigation (for navigation between splits)
 keymap("n", "<C-h>", "<C-w>h", vim.tbl_deep_extend("force", opts, { desc = "Move to window left of cursor" }))
 keymap("n", "<C-j>", "<C-w>j", vim.tbl_deep_extend("force", opts, { desc = "Move to window below of cursor" }))
