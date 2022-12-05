@@ -167,9 +167,10 @@ return packer.startup(function(use)
 			"nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-plenary",
 			"nvim-neotest/neotest-go",
+			"markemmons/neotest-deno",
+			"marilari88/neotest-vitest",
 		},
 	})
-	use({ "markemmons/neotest-deno", requires = { "nvim-neotest/neotest" } })
 
 	-- Pretty-fold
 	use({ "anuvyklack/pretty-fold.nvim", requires = "anuvyklack/nvim-keymap-amend" }) -- enables code folding
