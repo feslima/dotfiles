@@ -77,6 +77,6 @@ neotest.setup({
 		passed = "",
 		failed = "",
 		running = "",
-		unknown = "",
+		unknown = "",
 	},
 })

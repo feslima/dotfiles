@@ -25,6 +25,7 @@ local installed_servers = {
 	"gopls",
 	"html",
 	"denols",
+	"svelte",
 }
 lsp_installer.setup({
 	ensure_installed = installed_servers,

@@ -41,6 +41,7 @@ configs.setup({
 		"python",
 		"regex",
 		"rust",
+		"svelte",
 		"toml",
 		"typescript",
 		"tsx",
