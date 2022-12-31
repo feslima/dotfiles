@@ -26,10 +26,12 @@ parser_config.gotmpl = {
 configs.setup({
 	ensure_installed = {
 		"bash",
+		"c",
 		"css",
 		"dockerfile",
 		"go",
 		"gomod",
+		"help",
 		"html",
 		"http",
 		"javascript",
@@ -45,6 +47,7 @@ configs.setup({
 		"toml",
 		"typescript",
 		"tsx",
+		"vim",
 		"yaml",
 	},
 	sync_install = false,
