@@ -79,4 +79,8 @@ neotest.setup({
 		running = "",
 		unknown = "",
 	},
+	quickfix = {
+		enabled = false,
+		open = true,
+	},
 })
