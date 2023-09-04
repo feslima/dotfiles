@@ -10,6 +10,7 @@ local colors_modules = {
 	"languages.python",
 	"languages.typescript",
 	"languages.typescriptreact",
+	"languages.yaml",
 	"plugins.cmp",
 	"plugins.indent-blankline",
 	"plugins.git-conflict",

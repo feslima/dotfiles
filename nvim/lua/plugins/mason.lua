@@ -23,6 +23,10 @@ local opts = {
 		"eslint_d",
 		"eslint-lsp",
 		"rustywind",
+
+		-- yaml
+		"yaml-language-server",
+		"yamlfmt",
 	},
 }
 
