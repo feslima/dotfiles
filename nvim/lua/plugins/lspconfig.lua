@@ -135,9 +135,24 @@ lspconfig.ruff_lsp.setup({
 	capabilities = capabilities,
 })
 
+local tsserver_organize_imports = function()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+	}
+
+	vim.lsp.buf.execute_command(params)
+end
+
 lspconfig.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	commands = {
+		OrganizeImports = {
+			tsserver_organize_imports,
+			"Organize Imports",
+		},
+	},
 })
 
 lspconfig.eslint.setup({

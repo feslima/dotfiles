@@ -12,6 +12,18 @@ M.configure_hls_and_signs = function()
 	vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
 end
 
+M.setup_dap_events = function(dap, dapui)
+	dap.listeners.after.event_initialized["dapui_config"] = function()
+		dapui.open()
+	end
+	dap.listeners.before.event_terminated["dapui_config"] = function()
+		dapui.close()
+	end
+	dap.listeners.before.event_exited["dapui_config"] = function()
+		dapui.close()
+	end
+end
+
 M.setup_autocmds = function(dapui)
 	local debugger_toggle = function()
 		dapui.toggle()

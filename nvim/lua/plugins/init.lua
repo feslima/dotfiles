@@ -140,6 +140,7 @@ local plugins = {
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = "mfussenegger/nvim-dap",
+		event = "VeryLazy",
 		cmd = { "DebuggerToggle", "DebuggerOpen", "DebuggerClose", "DebuggerEval" },
 		init = function()
 			require("plugins.dap-ui").configure_hls_and_signs()
@@ -147,9 +148,12 @@ local plugins = {
 		opts = require("plugins.dap-ui").default_opts_table,
 		config = function(_, opts)
 			local dapui = require("dapui")
+			local dap = require("dap")
 			dapui.setup(opts)
 
-			require("plugins.dap-ui").setup_autocmds(dapui)
+			local configs = require("plugins.dap-ui")
+			configs.setup_autocmds(dapui)
+			configs.setup_dap_events(dap, dapui)
 		end,
 	},
 	{
