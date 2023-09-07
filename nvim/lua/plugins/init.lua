@@ -354,6 +354,13 @@ local plugins = {
 		end,
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function(_, opts)
+			require("nvim-ts-autotag").setup(opts)
+		end,
+	},
+	{
 		"folke/which-key.nvim",
 		keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
 		cmd = "WhichKey",

@@ -48,6 +48,7 @@ local function on_attach(bufnr)
 end
 
 local nvim_tree_opts = {
+	disable_netrw = true,
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -102,6 +103,11 @@ local nvim_tree_opts = {
 	},
 	view = {
 		side = "right",
+	},
+	update_focused_file = {
+		enable = true,
+		update_root = false,
+		ignore_list = {},
 	},
 }
 

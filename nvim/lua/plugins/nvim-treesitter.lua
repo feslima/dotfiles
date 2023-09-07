@@ -12,6 +12,7 @@ local opts = {
 		"typescript",
 		"tsx",
 		"json",
+		"svelte",
 
 		-- backend
 		"go",

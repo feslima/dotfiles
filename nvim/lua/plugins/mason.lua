@@ -24,6 +24,15 @@ local opts = {
 		"eslint-lsp",
 		"rustywind",
 
+		-- svelte
+		"svelte-language-server",
+
+		-- html
+		"html-lsp",
+
+		-- CSS
+		"css-lsp",
+
 		-- yaml
 		"yaml-language-server",
 		"yamlfmt",

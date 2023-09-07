@@ -19,6 +19,12 @@ local opts = function()
 
 	local configs = {
 		filetype = {
+			css = {
+				filetypes.css.prettierd,
+			},
+			html = {
+				filetypes.html.prettierd,
+			},
 			lua = {
 				filetypes.lua.stylua,
 			},

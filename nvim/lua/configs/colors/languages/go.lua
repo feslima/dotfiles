@@ -12,6 +12,7 @@ local setup_colors = function(c)
 		["@type.builtin.go"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@repeat.go"] = { fg = c.vscPink, bg = c.vscNone },
 		["@string.go"] = { fg = c.vscOrange, bg = c.vscNone },
+		["@constructor.go"] = { fg = c.vscYellow, bg = c.vscNone },
 	}
 end
 
