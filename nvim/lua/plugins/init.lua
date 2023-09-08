@@ -2,7 +2,6 @@ local plugins = {
 	{ "nvim-lua/plenary.nvim", lazy = false },
 	{
 		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
 		opts = require("plugins.nvim-treesitter"),
 		build = { ":TSUpdate" },
 		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
