@@ -12,6 +12,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"html",
 		"cssls",
 		"bashls",
+		"jsonls",
 	}
 
 	local table = {}

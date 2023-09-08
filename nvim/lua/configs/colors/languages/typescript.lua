@@ -4,6 +4,7 @@ local setup_colors = function(c)
 		["@variable.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@type.typescript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@keyword.typescript"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@keyword.export.typescript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.coroutine.typescript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@attribute.typescript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@property.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },
@@ -23,6 +24,10 @@ local setup_colors = function(c)
 		["@lsp.typemod.property.declaration.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.type.property.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.typemod.variable.readonly.typescript"] = { fg = c.vscAccentBlue, bg = c.vscNone },
+		["@lsp.typemod.variable.local.svelte"] = { fg = c.vscLightBlue, bg = c.vscNone },
+		["@lsp.type.typeParameter.typescript"] = { link = "@type.typescript" },
+		["@lsp.typemod.typeParameter.declaration.typescript"] = { link = "@type.typescript" },
+		["@lsp.typemod.variable.defaultLibrary.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 	}
 end
 

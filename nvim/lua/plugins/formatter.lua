@@ -25,6 +25,21 @@ local opts = function()
 			html = {
 				filetypes.html.prettierd,
 			},
+			javascript = {
+				filetypes.javascript.prettierd,
+				filetypes.javascript.eslint_d,
+			},
+			javascriptreact = {
+				filetypes.javascriptreact.prettierd,
+				filetypes.javascriptreact.eslint_d,
+				rustywind,
+			},
+			json = {
+				filetypes.json.prettierd,
+			},
+			jsonc = {
+				filetypes.json.prettierd,
+			},
 			lua = {
 				filetypes.lua.stylua,
 			},
@@ -39,6 +54,9 @@ local opts = function()
 			python = {
 				filetypes.python.black,
 				isort,
+			},
+			svelte = {
+				filetypes.svelte.prettier,
 			},
 			typescript = {
 				filetypes.typescript.prettierd,

@@ -4,6 +4,7 @@ local setup_colors = function(c)
 		["@variable.javascript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@type.javascript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@keyword.javascript"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@keyword.export.javascript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.coroutine.javascript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@attribute.javascript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@property.javascript"] = { fg = c.vscLightBlue, bg = c.vscNone },
