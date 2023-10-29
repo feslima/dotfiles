@@ -26,6 +26,7 @@ local M = {
 		c = {
 			name = "+Code",
 			a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
+			c = { "<cmd>CompilerOpen<CR>", "Open compilation options" },
 			d = { "<cmd>lua vim.diagnostic.open_float(0, { border = 'rounded' })<CR>", "Line diagnostics" },
 			f = { "<cmd>Format<CR>", "Format buffer" },
 			g = {
@@ -197,9 +198,9 @@ local M = {
 		s = { "<cmd> set eventignore=BufWritePost | write | set eventignore= <CR>", "Save without events" },
 		S = {
 			name = "+Session management",
-			s = { "<cmd>SaveSession<CR>", "Save session" },
-			r = { "<cmd>RestoreSession<CR>", "Restore session" },
-			d = { "<cmd>DeleteSession<CR>", "Delete session" },
+			s = { "<cmd>SessionSave<CR>", "Save session" },
+			r = { "<cmd>SessionRestore<CR>", "Restore session" },
+			d = { "<cmd>SessionDelete<CR>", "Delete session" },
 		},
 		t = {
 			name = "+Test utilities",

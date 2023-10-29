@@ -10,14 +10,10 @@ local plugins = {
 		end,
 	},
 	{
-		"NvChad/nvim-colorizer.lua",
+		"uga-rosa/ccc.nvim",
+		opts = require("plugins.ccc"),
 		config = function(_, opts)
-			require("colorizer").setup(opts)
-
-			-- execute colorizer as soon as possible
-			vim.defer_fn(function()
-				require("colorizer").attach_to_buffer(0)
-			end, 0)
+			require("ccc").setup(opts)
 		end,
 	},
 	{
@@ -371,6 +367,31 @@ local plugins = {
 			local custom_configs = require("plugins.which-key")
 			custom_configs.register_mappings(which_key)
 		end,
+	},
+	{
+		"Zeioth/compiler.nvim",
+		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+		dependencies = {
+			{
+				"stevearc/overseer.nvim",
+				commit = "19aac0426710c8fc0510e54b7a6466a03a1a7377",
+				cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+				opts = {
+					task_list = {
+						direction = "bottom",
+						min_height = 25,
+						max_height = 25,
+						default_detail = 1,
+						bindings = {
+							["q"] = function()
+								vim.cmd("OverseerClose")
+							end,
+						},
+					},
+				},
+			},
+		},
+		opts = {},
 	},
 }
 

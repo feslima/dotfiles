@@ -9,10 +9,14 @@ local setup_colors = function(c)
 		["@variable.go"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@operator.go"] = { fg = c.vscFront, bg = c.vscNone },
 		["@type.go"] = { fg = c.vscFront, bg = c.vscNone },
+		["@type.definition.go"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@type.builtin.go"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@repeat.go"] = { fg = c.vscPink, bg = c.vscNone },
 		["@string.go"] = { fg = c.vscOrange, bg = c.vscNone },
 		["@constructor.go"] = { fg = c.vscYellow, bg = c.vscNone },
+		["@constant.go"] = { fg = c.vscLightBlue, bg = c.vscNone },
+		["@constant.builtin.go"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@keyword.coroutine.go"] = { fg = c.vscPink, bg = c.vscNone },
 	}
 end
 

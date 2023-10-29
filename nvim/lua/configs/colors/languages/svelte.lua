@@ -10,8 +10,11 @@ local setup_colors = function(c)
 		["@lsp.type.class.svelte"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@lsp.type.interface.svelte"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@text.uri.svelte"] = { link = "" },
+		["@keyword.svelte"] = { fg = c.vscPink, bg = c.vscNone },
 		["@lsp.typemod.property.declaration.svelte"] = { fg = c.vscMediumBlue, bg = c.vscNone },
+		["@lsp.type.typeParameter.svelte"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.type.property.svelte"] = { fg = c.vscLightBlue, bg = c.vscNone },
+		["@lsp.typemod.method.declaration.svelte"] = { fg = c.vscLightBlue, bg = c.vscNone },
 	}
 end
 

@@ -23,6 +23,7 @@ local set_colors = function(c)
 		NonText = { fg = c.vscLineNumber, bg = c.vscNone },
 		Type = { fg = c.vscBlue, bg = c.vscNone },
 		Statement = { fg = c.vscPink, bg = c.vscNone },
+		Folded = { fg = c.vscUiOrange, bg = c.vscBack },
 
 		-- DiagnosticUnnecessary = { blend = 50 },
 

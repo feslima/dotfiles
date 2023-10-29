@@ -19,6 +19,9 @@ local opts = function()
 
 	local configs = {
 		filetype = {
+			c = {
+				filetypes.c.clangformat,
+			},
 			css = {
 				filetypes.css.prettierd,
 			},
@@ -57,6 +60,7 @@ local opts = function()
 			},
 			svelte = {
 				filetypes.svelte.prettier,
+				filetypes.typescript.eslint_d,
 			},
 			typescript = {
 				filetypes.typescript.prettierd,

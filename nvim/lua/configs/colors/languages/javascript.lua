@@ -21,6 +21,7 @@ local setup_colors = function(c)
 		["@constructor.javascript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@lsp.type.class.javascript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@lsp.type.interface.javascript"] = { fg = c.vscBlueGreen, bg = c.vscNone },
+		["@lsp.type.variable.javascript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.typemod.property.declaration.javascript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.type.property.javascript"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.typemod.variable.readonly.javascript"] = { fg = c.vscAccentBlue, bg = c.vscNone },

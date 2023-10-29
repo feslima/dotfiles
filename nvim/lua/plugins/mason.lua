@@ -33,6 +33,9 @@ local opts = {
 		-- CSS
 		"css-lsp",
 
+		-- tailwind
+		"tailwind-language-server",
+
 		-- yaml
 		"yaml-language-server",
 		"yamlfmt",
