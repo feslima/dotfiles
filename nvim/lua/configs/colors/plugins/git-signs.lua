@@ -6,6 +6,8 @@ local set_colors = function(c)
 		GitSignsAddLn = { fg = c.vscBack, bg = c.vscGreen },
 		GitSignsChangeLn = { fg = c.vscBack, bg = c.vscYellow },
 		GitSignsDeleteLn = { fg = c.vscBack, bg = c.vscRed },
+		GitSignsDeletePreview = { fg = c.vscGitDeleted, bg = c.vscNone },
+		GitSignsAddPreview = { fg = c.vscGitAdded, bg = c.vscNone },
 	}
 end
 
