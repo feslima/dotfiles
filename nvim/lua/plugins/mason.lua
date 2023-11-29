@@ -11,7 +11,7 @@ local opts = {
 
 		-- java
 		"jdtls", -- requires JDK 17+ installed
-		"google-java-format",
+		"clang-format",
 
 		-- python
 		"pyright",
