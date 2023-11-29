@@ -17,7 +17,8 @@ local opts = {
 		-- backend
 		"go",
 		"python",
-    "c",
+		"c",
+		"java",
 
 		-- miscelaneous
 		"make",

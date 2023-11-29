@@ -9,6 +9,10 @@ local opts = {
 		-- lua
 		"lua-language-server",
 
+		-- java
+		"jdtls", -- requires JDK 17+ installed
+		"google-java-format",
+
 		-- python
 		"pyright",
 		"black",

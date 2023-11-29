@@ -17,6 +17,15 @@ local opts = function()
 		}
 	end
 
+	function clangformat_no_sort()
+		-- leave the sorting to jdtls via code actions
+		return {
+			exe = "clang-format",
+			args = { "--style=Google", "--assume-filename=.java", "--sort-includes=false" },
+			stdin = true,
+		}
+	end
+
 	local configs = {
 		filetype = {
 			c = {
@@ -27,6 +36,9 @@ local opts = function()
 			},
 			html = {
 				filetypes.html.prettierd,
+			},
+			java = {
+				clangformat_no_sort,
 			},
 			javascript = {
 				filetypes.javascript.prettierd,

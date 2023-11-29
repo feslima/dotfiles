@@ -15,6 +15,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"jsonls",
 		"tailwindcss",
 		"clangd",
+		"jdtls",
 	}
 
 	local table = {}

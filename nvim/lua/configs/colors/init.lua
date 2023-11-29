@@ -8,6 +8,7 @@ local colors_modules = {
 	"languages.go",
 	"languages.html",
 	"languages.lua",
+	"languages.java",
 	"languages.javascript",
 	"languages.markdown",
 	"languages.python",
