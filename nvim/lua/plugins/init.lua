@@ -134,7 +134,7 @@ local plugins = {
 	},
 	{
 		"rcarriga/nvim-dap-ui",
-		dependencies = "mfussenegger/nvim-dap",
+		dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
 		event = "VeryLazy",
 		cmd = { "DebuggerToggle", "DebuggerOpen", "DebuggerClose", "DebuggerEval" },
 		init = function()
@@ -343,10 +343,8 @@ local plugins = {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		lazy = false,
-		opts = require("plugins.indent-blankline"),
-		config = function(_, opts)
-			require("indent_blankline").setup(opts)
-		end,
+    main = "ibl",
+		opts = {},
 	},
 	{
 		"windwp/nvim-ts-autotag",

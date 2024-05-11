@@ -8,6 +8,7 @@ local opts = {
 
 		-- lua
 		"lua-language-server",
+		"stylua",
 
 		-- java
 		"jdtls", -- requires JDK 17+ installed
@@ -38,7 +39,7 @@ local opts = {
 		"css-lsp",
 
 		-- tailwind
-		"tailwind-language-server",
+		"tailwindcss-language-server",
 
 		-- yaml
 		"yaml-language-server",
