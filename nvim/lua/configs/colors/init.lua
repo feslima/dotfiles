@@ -11,6 +11,7 @@ local colors_modules = {
 	"languages.java",
 	"languages.javascript",
 	"languages.markdown",
+	"languages.proto",
 	"languages.python",
 	"languages.typescript",
 	"languages.typescriptreact",

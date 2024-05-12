@@ -20,6 +20,7 @@ local opts = {
 		"python",
 		"c",
 		"java",
+		"proto",
 
 		-- miscelaneous
 		"make",
