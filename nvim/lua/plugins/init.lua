@@ -74,6 +74,10 @@ local plugins = {
 		end,
 	},
 	{
+		"nvim-tree/nvim-web-devicons",
+		opts = require("plugins.nvim-web-devicons"),
+	},
+	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
