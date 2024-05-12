@@ -66,6 +66,9 @@ local opts = function()
 					}
 				end,
 			},
+			proto = {
+				filetypes.proto.buf_format,
+			},
 			python = {
 				filetypes.python.black,
 				isort,

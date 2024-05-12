@@ -164,3 +164,8 @@ lspconfig.yamlls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.bufls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

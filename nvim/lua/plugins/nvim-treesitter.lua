@@ -2,6 +2,7 @@ local opts = {
 	ensure_installed = {
 		-- defaults
 		"vim",
+		"vimdoc",
 		"lua",
 
 		-- web dev

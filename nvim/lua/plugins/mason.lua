@@ -14,6 +14,10 @@ local opts = {
 		"jdtls", -- requires JDK 17+ installed
 		"clang-format",
 
+		-- protobuffs
+		"buf-language-server",
+		"buf",
+
 		-- python
 		"pyright",
 		"black",
