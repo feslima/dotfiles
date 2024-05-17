@@ -4,6 +4,7 @@ local colors_modules = {
 	"base",
 	"lsp",
 	"languages.base",
+	"languages.c",
 	"languages.css",
 	"languages.go",
 	"languages.html",
