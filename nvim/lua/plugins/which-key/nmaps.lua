@@ -115,7 +115,8 @@ local M = {
 			p = {
 				name = "+Panel controls",
 				c = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
-				e = { "<cmd>DebuggerEval<CR>", "Evaluate one time expression in debbuger" },
+				e = { "<cmd>DebuggerEval<CR>", "Evaluate expression in debugger" },
+				i = { "<cmd>DebuggerEvalInput<CR>", "Evaluate one time expression in debugger" },
 				d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
 				o = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
 			},
