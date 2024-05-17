@@ -1,5 +1,10 @@
 local opts = {
 	ensure_installed = {
+		-- C/C++
+		"clangd",
+		"ast-grep",
+		"codelldb",
+
 		-- golang stuff
 		"gopls",
 		"golangci-lint",

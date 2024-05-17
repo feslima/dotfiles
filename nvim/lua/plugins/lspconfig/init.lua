@@ -41,7 +41,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 -- LSP config
 local lspconfig = require("lspconfig")
 local util = require("lspconfig/util")
-local get_server_table = require("plugins.lspconfig.servers")
 
 local on_attach = function(client, bufnr)
 	client.server_capabilities.documentFormattingProvider = false
@@ -68,6 +67,7 @@ capabilities.textDocument.completion.completionItem = {
 	},
 }
 
+local get_server_table = require("plugins.lspconfig.servers")
 local server_table = get_server_table(on_attach, capabilities, util)
 for server, settings in pairs(server_table) do
 	lspconfig[server].setup(settings)

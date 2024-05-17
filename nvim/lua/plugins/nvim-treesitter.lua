@@ -19,6 +19,7 @@ local opts = {
 		"go",
 		"python",
 		"c",
+		"cpp",
 		"java",
 		"proto",
 
