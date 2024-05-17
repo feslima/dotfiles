@@ -13,13 +13,16 @@ M.configure_hls_and_signs = function()
 end
 
 M.setup_dap_events = function(dap, dapui)
-	dap.listeners.after.event_initialized["dapui_config"] = function()
+	dap.listeners.before.attach.dapui_config = function()
 		dapui.open()
 	end
-	dap.listeners.before.event_terminated["dapui_config"] = function()
+	dap.listeners.before.launch.dapui_config = function()
+		dapui.open()
+	end
+	dap.listeners.before.event_terminated.dapui_config = function()
 		dapui.close()
 	end
-	dap.listeners.before.event_exited["dapui_config"] = function()
+	dap.listeners.before.event_exited.dapui_config = function()
 		dapui.close()
 	end
 end
@@ -39,6 +42,12 @@ M.setup_autocmds = function(dapui)
 
 	local debugger_eval = function()
 		vim.ui.input({ prompt = "Type expression for one time evaluation" }, function(input)
+			dapui.eval(nil, { enter = true })
+		end)
+	end
+
+	local debugger_eval_input = function()
+		vim.ui.input({ prompt = "Type expression for one time evaluation" }, function(input)
 			if input ~= "" and input ~= nil then
 				dapui.eval(input)
 				dapui.eval() -- this jumps the cursor to the floating window
@@ -49,9 +58,10 @@ M.setup_autocmds = function(dapui)
 	vim.api.nvim_create_user_command("DebuggerToggle", debugger_toggle, { desc = "Toggle debugger UI" })
 	vim.api.nvim_create_user_command("DebuggerOpen", debugger_open, { desc = "Open debugger UI" })
 	vim.api.nvim_create_user_command("DebuggerClose", debugger_close, { desc = "Close debugger UI" })
+	vim.api.nvim_create_user_command("DebuggerEval", debugger_eval, { desc = "Evaluate expression in debugger" })
 	vim.api.nvim_create_user_command(
-		"DebuggerEval",
-		debugger_eval,
+		"DebuggerEvalInput",
+		debugger_eval_input,
 		{ desc = "Evaluate one time expression in debugger" }
 	)
 end
