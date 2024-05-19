@@ -3,7 +3,7 @@ local opts = {
 		-- C/C++
 		"clangd",
 		"ast-grep",
-		"codelldb",
+		"cpptools",
 
 		-- golang stuff
 		"gopls",
