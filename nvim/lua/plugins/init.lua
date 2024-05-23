@@ -398,27 +398,33 @@ local plugins = {
 	{
 		"Zeioth/compiler.nvim",
 		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-		dependencies = {
-			{
-				"stevearc/overseer.nvim",
-				commit = "19aac0426710c8fc0510e54b7a6466a03a1a7377",
-				cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-				opts = {
-					task_list = {
-						direction = "bottom",
-						min_height = 25,
-						max_height = 25,
-						default_detail = 1,
-						bindings = {
-							["q"] = function()
-								vim.cmd("OverseerClose")
-							end,
-						},
-					},
+		dependencies = { "stevearc/overseer.nvim" },
+		opts = {},
+	},
+	{
+		"stevearc/overseer.nvim",
+		commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
+		cmd = {
+			"OverseerRun",
+			"OverseerClose",
+			"OverseerToggle",
+			"CompilerOpen",
+			"CompilerToggleResults",
+			"CompilerRedo",
+		},
+		opts = {
+			task_list = {
+				direction = "bottom",
+				min_height = 25,
+				max_height = 25,
+				default_detail = 1,
+				bindings = {
+					["q"] = function()
+						vim.cmd("OverseerClose")
+					end,
 				},
 			},
 		},
-		opts = {},
 	},
 }
 
