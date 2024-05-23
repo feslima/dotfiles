@@ -12,6 +12,7 @@ local colors_modules = {
 	"languages.lua",
 	"languages.java",
 	"languages.javascript",
+	"languages.make",
 	"languages.markdown",
 	"languages.proto",
 	"languages.python",

@@ -1,4 +1,6 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@property.css"] = { fg = c.vscYellowOrange, bg = c.vscNone },
 		["@type.css"] = { link = "@property.css" },
@@ -7,4 +9,4 @@ local setup_colors = function(c)
 	}
 end
 
-return setup_colors
+return set_colors

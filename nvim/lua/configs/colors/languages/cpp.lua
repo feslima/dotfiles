@@ -1,3 +1,5 @@
+---@param c ColorsTable
+---@return table
 local set_colors = function(c)
 	return {
 		["@operator.cpp"] = { fg = c.vscBlue, bg = c.vscNone },

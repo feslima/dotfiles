@@ -1,3 +1,5 @@
+---@param c ColorsTable
+---@return table
 local set_colors = function(c)
 	return {
 		["@lsp.typemod.function.defaultLibrary.lua"] = { fg = c.vscYellow, bg = c.vscNone },

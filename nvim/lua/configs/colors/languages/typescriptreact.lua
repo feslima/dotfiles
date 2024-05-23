@@ -1,4 +1,6 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@include.tsx"] = { fg = c.vscPink, bg = c.vscNone },
 		["@variable.tsx"] = { fg = c.vscLightBlue, bg = c.vscNone },
@@ -25,4 +27,4 @@ local setup_colors = function(c)
 	}
 end
 
-return setup_colors
+return set_colors

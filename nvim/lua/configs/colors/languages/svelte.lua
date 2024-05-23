@@ -1,4 +1,6 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@operator.svelte"] = { fg = c.vscFront, bg = c.vscNone },
 		["@tag.svelte"] = { fg = c.vscBlue, bg = c.vscNone },
@@ -18,4 +20,4 @@ local setup_colors = function(c)
 	}
 end
 
-return setup_colors
+return set_colors

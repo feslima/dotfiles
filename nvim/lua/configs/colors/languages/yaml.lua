@@ -1,7 +1,9 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@field.yaml"] = { fg = c.vscBlue, bg = c.vscNone },
 	}
 end
 
-return setup_colors
+return set_colors

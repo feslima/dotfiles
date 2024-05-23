@@ -1,4 +1,6 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@function.builtin.go"] = { fg = c.vscYellow, bg = c.vscNone },
 		["@function.call.go"] = { fg = c.vscYellow, bg = c.vscNone },
@@ -30,4 +32,4 @@ local setup_colors = function(c)
 	}
 end
 
-return setup_colors
+return set_colors

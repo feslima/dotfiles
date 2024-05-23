@@ -1,4 +1,6 @@
-local setup_colors = function(c)
+---@param c ColorsTable
+---@return table
+local set_colors = function(c)
 	return {
 		["@string.special.proto"] = { fg = c.vscOrange, bg = c.vscNone },
 		["@packageIdentifier"] = { fg = c.vscOrange, bg = c.vscNone },
@@ -14,4 +16,4 @@ local setup_colors = function(c)
 	}
 end
 
-return setup_colors
+return set_colors
