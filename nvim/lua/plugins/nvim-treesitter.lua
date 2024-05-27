@@ -29,6 +29,7 @@ local opts = {
 		"yaml",
 		"dockerfile",
 		"bash",
+		"asm",
 	},
 	highlight = {
 		enable = true,

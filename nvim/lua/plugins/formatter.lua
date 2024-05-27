@@ -26,8 +26,19 @@ local opts = function()
 		}
 	end
 
+	function asm_fmt()
+		-- Format assembly files
+		return {
+			exe = "asmfmt",
+			stdin = true,
+		}
+	end
+
 	local configs = {
 		filetype = {
+			asm = {
+				asm_fmt,
+			},
 			c = {
 				filetypes.c.clangformat,
 			},

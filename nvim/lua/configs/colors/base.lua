@@ -1,3 +1,5 @@
+---@param c ColorsTable
+---@return table
 local set_colors = function(c)
 	local M = {}
 
@@ -25,7 +27,7 @@ local set_colors = function(c)
 		Statement = { fg = c.vscPink, bg = c.vscNone },
 		Folded = { fg = c.vscUiOrange, bg = c.vscBack },
 
-		-- DiagnosticUnnecessary = { blend = 50 },
+		DiagnosticUnnecessary = { fg = c.vscSplitLight, bg = c.vscNone },
 
 		-- floating windows
 		NormalFloat = { fg = c.vscPopupFront, bg = c.vscBack },

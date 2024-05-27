@@ -18,6 +18,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"jdtls",
 		"ast_grep",
 		"bufls",
+		"asm_lsp",
 	}
 
 	local table = {}

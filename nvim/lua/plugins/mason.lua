@@ -1,5 +1,9 @@
 local opts = {
 	ensure_installed = {
+		-- assembly - RISC-V
+		"asm-lsp",
+		"asmfmt",
+
 		-- C/C++
 		"clangd",
 		"ast-grep",
