@@ -1,5 +1,5 @@
 if vim.g.vscode then
-	require("vscode")
+	require("vscode-neovim")
 else
 	require("default")
 end
