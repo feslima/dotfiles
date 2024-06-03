@@ -27,7 +27,7 @@ local set_colors = function(c)
 		Statement = { fg = c.vscPink, bg = c.vscNone },
 		Folded = { fg = c.vscUiOrange, bg = c.vscBack },
 
-		DiagnosticUnnecessary = { fg = c.vscSplitLight, bg = c.vscNone },
+		-- DiagnosticUnnecessary = { fg = c.vscSplitLight, bg = c.vscNone },
 
 		-- floating windows
 		NormalFloat = { fg = c.vscPopupFront, bg = c.vscBack },

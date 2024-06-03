@@ -26,6 +26,7 @@ local set_colors = function(c)
 		["@keyword.function.lua"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.conditional.lua"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.repeat.lua"] = { fg = c.vscPink, bg = c.vscNone },
+		["@keyword.operator.lua"] = { fg = c.vscFront, bg = c.vscNone },
 		["@string.regexp.lua"] = { fg = c.vscOrange, bg = c.vscNone },
 		["@constructor.lua"] = { fg = c.vscPink, bg = c.vscNone },
 		["@constant.builtin.lua"] = { fg = c.vscBlue, bg = c.vscNone },
