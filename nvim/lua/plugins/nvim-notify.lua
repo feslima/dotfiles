@@ -17,8 +17,8 @@ local opts = {
 		notification = "%T",
 		notification_history = "%FT%T",
 	},
-	timeout = 5000,
-	top_down = true,
+	timeout = 1000,
+	top_down = false,
 }
 
 return opts
