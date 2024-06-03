@@ -1,6 +1,9 @@
 local opts = {
 	ensure_installed = {
-		-- assembly - RISC-V
+		-- miscelaneous
+		"harper-ls",
+
+		-- Assembly - RISC-V
 		"asm-lsp",
 		"asmfmt",
 

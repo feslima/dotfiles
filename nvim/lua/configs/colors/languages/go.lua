@@ -6,6 +6,7 @@ local set_colors = function(c)
 		["@function.call.go"] = { fg = c.vscYellow, bg = c.vscNone },
 		["@keyword.go"] = { fg = c.vscBlue, bg = c.vscNone },
 		["@keyword.import.go"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@keyword.return.go"] = { fg = c.vscPink, bg = c.vscNone },
 		["@goImportDeclaration"] = { fg = c.vscPink, bg = c.vscNone },
 		["@goImportPackageIdentifier"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@keyword.type.go"] = { fg = c.vscBlue, bg = c.vscNone },

@@ -426,6 +426,14 @@ local plugins = {
 			},
 		},
 	},
+	{
+		"zbirenbaum/neodim",
+		event = "LspAttach",
+		opts = require("plugins.neodim"),
+		config = function(_, opts)
+			require("neodim").setup(opts)
+		end,
+	},
 }
 
 return plugins
