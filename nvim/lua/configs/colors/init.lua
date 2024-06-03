@@ -26,6 +26,7 @@ local colors_modules = {
 	"plugins.git-conflict",
 	"plugins.git-signs",
 	"plugins.lazy",
+	"plugins.nvim-notify",
 	"plugins.nvim-tree",
 	"plugins.octo",
 	"plugins.telescope",

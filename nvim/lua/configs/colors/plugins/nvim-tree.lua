@@ -1,14 +1,17 @@
 local disable_nvimtree_bg = true
 
+---@param c ColorsTable
+---@return table
 local set_colors = function(c)
 	return {
 		NvimTreeRootFolder = { fg = c.vscFront, bg = c.vscNone, bold = true },
 		NvimTreeGitDirty = { fg = c.vscGitModified, bg = c.vscNone },
 		NvimTreeGitNew = { fg = c.vscGitAdded, bg = c.vscNone },
 		NvimTreeImageFile = { fg = c.vscViolet, bg = c.vscNone },
+		NvimTreeExecFile = { fg = c.vscGreen, bg = c.vscNone, bold = true },
+		NvimTreeSpecialFile = { fg = c.vscPink, bg = c.vscNone, underline = false },
 		NvimTreeEmptyFolderName = { fg = c.vscGray, bg = c.vscNone },
 		NvimTreeFolderName = { fg = c.vscFront, bg = c.vscNone },
-		NvimTreeSpecialFile = { fg = c.vscPink, bg = c.vscNone, underline = true },
 		NvimTreeNormal = { fg = c.vscFront, bg = disable_nvimtree_bg and c.vscBack or c.vscLeftDark },
 		NvimTreeCursorLine = { fg = c.vscNone, bg = disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftMid },
 		NvimTreeVertSplit = { fg = disable_nvimtree_bg and c.vscSplitDark or c.vscBack, bg = c.vscBack },

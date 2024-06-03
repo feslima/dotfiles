@@ -22,6 +22,16 @@ local plugins = {
 		opts = {},
 	},
 	{
+		"rcarriga/nvim-notify",
+		lazy = false,
+		opts = require("plugins.nvim-notify"),
+		config = function(_, opts)
+			local notify = require("notify")
+			notify.setup(opts)
+			vim.notify = notify
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("plugins.lspconfig")
@@ -412,19 +422,7 @@ local plugins = {
 			"CompilerToggleResults",
 			"CompilerRedo",
 		},
-		opts = {
-			task_list = {
-				direction = "bottom",
-				min_height = 25,
-				max_height = 25,
-				default_detail = 1,
-				bindings = {
-					["q"] = function()
-						vim.cmd("OverseerClose")
-					end,
-				},
-			},
-		},
+		opts = require("plugins.overseer"),
 	},
 	{
 		"zbirenbaum/neodim",
