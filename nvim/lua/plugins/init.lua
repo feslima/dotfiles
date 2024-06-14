@@ -29,7 +29,22 @@ local plugins = {
 			local notify = require("notify")
 			notify.setup(opts)
 			vim.notify = notify
+
+			vim.api.nvim_create_user_command("NotifyCloseAll", function()
+				notify.dismiss({ silent = true })
+			end, { desc = "Close all notification windows" })
 		end,
+		priority = 100, -- Always make sure this value is higher than auto-session plugin
+	},
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+		opts = require("plugins.auto-session"),
+		config = function(_, opts)
+			require("auto-session").setup(opts)
+			vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+		end,
+		priority = 50,
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -345,24 +360,6 @@ local plugins = {
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = require("plugins.bufferline"),
-	},
-	{
-		"rmagatti/auto-session",
-		cmd = {
-			"SessionSave",
-			"SessionRestore",
-			"SessionRestoreFromFile",
-			"SessionDelete",
-			"Autosession",
-		},
-		init = function()
-			vim.cmd("SessionRestore")
-		end,
-		opts = require("plugins.auto-session"),
-		config = function(_, opts)
-			require("auto-session").setup(opts)
-			vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-		end,
 	},
 	{
 		"akinsho/toggleterm.nvim",

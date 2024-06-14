@@ -10,7 +10,12 @@ end
 local opts = {
 	log_level = "error",
 	auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-	pre_save_cmds = { close_all_floating_windows },
+	pre_save_cmds = {
+		close_all_floating_windows,
+		function()
+			vim.cmd("NotifyCloseAll")
+		end,
+	},
 }
 
 return opts
