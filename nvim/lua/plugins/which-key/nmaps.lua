@@ -182,6 +182,7 @@ local M = {
 			name = "+Monitoring",
 			e = { "<cmd>Telescope env<CR>", "Current environment variables" },
 			i = { "<cmd>Inspect<CR>", "Inspect under cursor" },
+			t = { "<cmd>InspectTree<CR>", "Inspect tree" },
 			l = {
 				name = "+LSP",
 				i = { "<cmd>LspInfo<CR>", "Open LSP info panel" },
