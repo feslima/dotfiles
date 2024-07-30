@@ -8,6 +8,7 @@ local colors_modules = {
 	"languages.c",
 	"languages.cpp",
 	"languages.css",
+	"languages.dockerfile",
 	"languages.go",
 	"languages.html",
 	"languages.lua",

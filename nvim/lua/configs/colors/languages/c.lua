@@ -4,6 +4,7 @@ local set_colors = function(c)
 	return {
 		["cDefine"] = { fg = c.vscPink, bg = c.vscNone },
 		["@character.c"] = { fg = c.vscOrange, bg = c.vscNone },
+		["@constant.builtin.c"] = { fg = c.vscBlue, bg = c.vscNone },
 		["@keyword.import.c"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.return.c"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.conditional.c"] = { fg = c.vscPink, bg = c.vscNone },

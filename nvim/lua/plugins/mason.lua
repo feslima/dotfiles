@@ -12,6 +12,10 @@ local opts = {
 		"ast-grep",
 		"cpptools",
 
+		-- Docker
+		"docker-compose-language-service",
+		"dockerfile-language-server",
+
 		-- golang stuff
 		"gopls",
 		"golangci-lint",
@@ -44,6 +48,10 @@ local opts = {
 		"eslint_d",
 		"eslint-lsp",
 		"rustywind",
+
+		-- SQL
+		"sqlls",
+		"sqlfluff",
 
 		-- svelte
 		"svelte-language-server",

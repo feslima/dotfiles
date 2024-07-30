@@ -3,6 +3,7 @@
 local set_colors = function(c)
 	return {
 		["@field.yaml"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@property.yaml"] = { fg = c.vscBlue, bg = c.vscNone },
 	}
 end
 

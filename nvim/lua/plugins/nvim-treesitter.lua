@@ -30,6 +30,7 @@ local opts = {
 		"dockerfile",
 		"bash",
 		"asm",
+		"sql",
 	},
 	highlight = {
 		enable = true,

@@ -3,6 +3,7 @@
 local set_colors = function(c)
 	return {
 		["@operator.cpp"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@constant.builtin.cpp"] = { fg = c.vscBlue, bg = c.vscNone },
 		["@keyword.directive.cpp"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.directive.define.cpp"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.type.cpp"] = { fg = c.vscBlue, bg = c.vscNone },

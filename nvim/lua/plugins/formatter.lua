@@ -34,6 +34,20 @@ local opts = function()
 		}
 	end
 
+	function sqlfluff()
+		return {
+			exe = "sqlfluff",
+			args = {
+				"format",
+				"--disable-progress-bar",
+				"--nocolor",
+				"-",
+			},
+			stdin = true,
+			ignore_exitcode = false,
+		}
+	end
+
 	local configs = {
 		filetype = {
 			asm = {
@@ -83,6 +97,9 @@ local opts = function()
 			python = {
 				filetypes.python.black,
 				isort,
+			},
+			sql = {
+				sqlfluff,
 			},
 			svelte = {
 				filetypes.svelte.prettier,

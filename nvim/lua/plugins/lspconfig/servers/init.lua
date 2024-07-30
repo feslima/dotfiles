@@ -19,7 +19,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"ast_grep",
 		"bufls",
 		"asm_lsp",
-		"harper_ls",
+		"sqlls",
 	}
 
 	local table = {}
