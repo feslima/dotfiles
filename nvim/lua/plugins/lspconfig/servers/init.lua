@@ -5,7 +5,6 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"pyright",
 		"golangci_lint_ls",
 		"ruff_lsp",
-		"tsserver",
 		"eslint",
 		"yamlls",
 		"svelte",
