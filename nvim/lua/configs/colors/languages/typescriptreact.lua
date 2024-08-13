@@ -5,6 +5,7 @@ local set_colors = function(c)
 		["@include.tsx"] = { fg = c.vscPink, bg = c.vscNone },
 		["@variable.tsx"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@type.tsx"] = { fg = c.vscBlueGreen, bg = c.vscNone },
+		Type = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@keyword.tsx"] = { fg = c.vscBlue, bg = c.vscNone },
 		["@keyword.return.tsx"] = { fg = c.vscPink, bg = c.vscNone },
 		["@keyword.coroutine.tsx"] = { fg = c.vscPink, bg = c.vscNone },
@@ -27,7 +28,8 @@ local set_colors = function(c)
 		["@constructor.tsx"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@none.tsx"] = { fg = c.vscFront, bg = c.vscNone },
 		["@lsp.typemod.variable.readonly.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
-		["@lsp.typemod.function.readonly.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
+		-- ["@lsp.typemod.function.readonly.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
+		["@lsp.typemod.function.declaration.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
 	}
 end
 

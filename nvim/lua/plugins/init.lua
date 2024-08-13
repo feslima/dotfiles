@@ -434,6 +434,18 @@ local plugins = {
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
+	},
+	{
+		"danymat/neogen",
+		version = "*",
+		lazy = false,
+		config = function(_, opts)
+			require("neogen").setup(opts)
+		end,
+	},
 }
 
 return plugins
