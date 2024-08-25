@@ -369,11 +369,18 @@ local plugins = {
 		end,
 	},
 	{
-		"simrat39/symbols-outline.nvim",
-		cmd = { "SymbolsOutline" },
-		opts = require("plugins.symbols-outline"),
+		"SmiteshP/nvim-navbuddy",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim",
+			"numToStr/Comment.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		cmd = { "Navbuddy" },
+		opts = require("plugins.nvim-navbuddy"),
 		config = function(_, opts)
-			require("symbols-outline").setup(opts)
+			require("nvim-navbuddy").setup(opts)
 		end,
 	},
 	{
