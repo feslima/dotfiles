@@ -9,6 +9,11 @@ local opts = function()
 				end,
 			}),
 		},
+		floating = {
+			border = "rounded",
+			max_height = 0.8,
+			max_width = 0.99,
+		},
 	}
 end
 
