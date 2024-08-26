@@ -147,7 +147,9 @@ local plugins = {
 		"rmagatti/goto-preview",
 		dependencies = "nvim-telescope/telescope.nvim",
 		config = function()
-			require("goto-preview").setup({})
+			require("goto-preview").setup({
+				height = 20,
+			})
 		end,
 	},
 	{
