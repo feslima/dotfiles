@@ -269,6 +269,7 @@ local plugins = {
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-go",
+			"marilari88/neotest-vitest",
 		},
 		cmd = { "Neotest" },
 		opts = require("plugins.neotest"),
@@ -441,7 +442,10 @@ local plugins = {
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
+		opts = require("plugins.typescript-tools"),
+		config = function(_, opts)
+			require("typescript-tools").setup(opts)
+		end,
 	},
 	{
 		"windwp/nvim-ts-autotag",
@@ -453,6 +457,23 @@ local plugins = {
 		lazy = false,
 		config = function(_, opts)
 			require("neogen").setup(opts)
+		end,
+	},
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = true,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = function(_, opts)
+			vim.opt.conceallevel = 1
+			require("obsidian").setup({
+				workspaces = {
+					{ name = "my-notes", path = "~/vaults/my-notes" },
+				},
+			})
 		end,
 	},
 }

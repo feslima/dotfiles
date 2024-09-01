@@ -10,6 +10,7 @@ local opts = function()
 					return file_path:match("^.+(%..+)$") == ".py"
 				end,
 			}),
+			require("neotest-vitest"),
 		},
 		floating = {
 			border = "rounded",
