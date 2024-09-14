@@ -59,6 +59,9 @@ local util = require("lspconfig/util")
 local on_attach = function(client, bufnr)
 	client.server_capabilities.documentFormattingProvider = false
 	client.server_capabilities.documentRangeFormattingProvider = false
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true)
+	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

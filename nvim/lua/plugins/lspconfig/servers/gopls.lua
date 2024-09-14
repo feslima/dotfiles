@@ -12,6 +12,11 @@ local setup = function(on_attach, capabilities, util)
 				analyses = {
 					unusedparams = true,
 				},
+				["ui.inlayhint.hints"] = {
+					compositeLiteralFields = true,
+					constantValues = true,
+					parameterNames = true,
+				},
 			},
 		},
 	}

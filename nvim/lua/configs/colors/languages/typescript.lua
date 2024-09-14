@@ -22,6 +22,7 @@ local set_colors = function(c)
 		["@constant.typescript"] = { fg = c.vscAccentBlue, bg = c.vscNone },
 		["@exception.typescript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@constructor.typescript"] = { fg = c.vscBlue, bg = c.vscNone },
+		["@string.regexp.typescript"] = { fg = c.vscLightRed, bg = c.vscNone },
 		["@keyword.modifier.typescript"] = { fg = c.vscBlue, bg = c.vscNone },
 		["@keyword.return.typescript"] = { fg = c.vscPink, bg = c.vscNone },
 		["@lsp.typemod.variable.local.typescript"] = { fg = c.vscLightBlue, bg = c.vscNone },

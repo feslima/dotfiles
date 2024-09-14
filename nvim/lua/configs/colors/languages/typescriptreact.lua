@@ -27,6 +27,7 @@ local set_colors = function(c)
 		["@tag.attribute.tsx"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@constructor.tsx"] = { fg = c.vscBlueGreen, bg = c.vscNone },
 		["@none.tsx"] = { fg = c.vscFront, bg = c.vscNone },
+		["@string.regexp.tsx"] = { fg = c.vscLightRed, bg = c.vscNone },
 		["@lsp.typemod.variable.readonly.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		-- ["@lsp.typemod.function.readonly.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
 		["@lsp.typemod.function.declaration.typescriptreact"] = { fg = c.vscLightBlue, bg = c.vscNone },
