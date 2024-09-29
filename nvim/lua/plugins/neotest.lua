@@ -2,7 +2,7 @@ local opts = function()
 	return {
 		adapters = {
 			require("neotest-go")({
-				args = { "-timeout=30s" },
+				args = { "-timeout=5s" },
 			}),
 			require("neotest-python")({
 				runner = "unittest",
