@@ -476,6 +476,13 @@ local plugins = {
 			})
 		end,
 	},
+	{
+		"dstein64/nvim-scrollview",
+		event = "LspAttach",
+		config = function(_, opts)
+			require("scrollview").setup(opts)
+		end,
+	},
 }
 
 return plugins
