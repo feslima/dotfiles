@@ -8,11 +8,13 @@ Configurations for some of the tools I use.
    and use as terminal font.
 2. Install the [`oh-my-bash`](https://github.com/ohmybash/oh-my-bash).
 
-### Installing pyenv
+
+### Installing this config
 #### prequisites
-For compiling/installing python versions (run once after installing `pyenv`):
-```sh
-sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev curl git \
-libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-```
+- You will need `python`>=3.12. A virtual environment is highly recommended;
+- `poetry` is optional;
+
+Run `pip install -r requirements.txt` (or `poetry install --no-root`).
+Then `pyinfra installer/inventories.py installer/tasks/<any-dependency-you-want>.py`,
+this will setup the dependency on your local machine assuming its a debian/ubuntu
+based OS.
