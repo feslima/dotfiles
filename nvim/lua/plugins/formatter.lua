@@ -1,5 +1,6 @@
 local opts = function()
 	local filetypes = require("formatter.filetypes")
+	local util = require("formatter.util")
 
 	local isort = function()
 		return {
@@ -45,6 +46,24 @@ local opts = function()
 			},
 			stdin = true,
 			ignore_exitcode = false,
+		}
+	end
+
+	function djlint_fmt()
+		local args = {
+			"--reformat",
+			"--indent=4",
+		}
+		local ext = util.get_current_buffer_file_extension()
+		if ext == "j2" then
+			table.insert(args, "--profile=jinja")
+			table.insert(args, "--preserve-blank-lines")
+		end
+		vim.notify(vim.inspect(args))
+		return {
+			exe = "djlint -",
+			args = args,
+			stdin = true,
 		}
 	end
 

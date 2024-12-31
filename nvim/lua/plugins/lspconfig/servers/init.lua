@@ -19,6 +19,8 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"bufls",
 		"asm_lsp",
 		"sqlls",
+		"jinja_lsp",
+    "emmet_language_server"
 	}
 
 	local table = {}

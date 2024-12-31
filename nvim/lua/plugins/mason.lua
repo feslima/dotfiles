@@ -3,6 +3,10 @@ local opts = {
 		-- miscelaneous
 		"harper-ls",
 
+		-- templating
+		"jinja-lsp",
+		"djlint",
+
 		-- Assembly - RISC-V
 		"asm-lsp",
 		"asmfmt",
@@ -58,6 +62,7 @@ local opts = {
 
 		-- html
 		"html-lsp",
+		"emmet-language-server",
 
 		-- CSS
 		"css-lsp",
