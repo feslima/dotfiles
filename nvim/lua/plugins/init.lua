@@ -500,6 +500,26 @@ local plugins = {
 		},
 		config = true,
 	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		ft = { "markdown", "codecompanion" },
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+		opts = require("plugins.render-markdown"),
+		config = function(_, opts)
+			require("render-markdown").setup(opts)
+		end,
+	},
+	{
+		"olimorris/codecompanion.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = require("plugins.codecompanion"),
+		config = function(_, opts)
+			require("codecompanion").setup(opts)
+		end,
+	},
 }
 
 return plugins

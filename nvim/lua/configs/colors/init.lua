@@ -30,6 +30,7 @@ local colors_modules = {
 	"plugins.nvim-notify",
 	"plugins.nvim-tree",
 	"plugins.octo",
+	"plugins.render-markdown",
 	"plugins.telescope",
 	"plugins.which-key",
 }
