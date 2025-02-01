@@ -408,9 +408,10 @@ local plugins = {
 	},
 	{
 		"folke/which-key.nvim",
+		lazy = false,
 		keys = { "<leader>", "<c-r>", '"', "'", "`", "c", "v", "g" },
 		cmd = "WhichKey",
-		opts = { window = { border = "rounded" } },
+		opts = { win = { border = "rounded" } },
 		config = function(_, opts)
 			local which_key = require("which-key")
 			which_key.setup(opts)
@@ -422,12 +423,12 @@ local plugins = {
 	{
 		"Zeioth/compiler.nvim",
 		cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
-		dependencies = { "stevearc/overseer.nvim" },
+		dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
 		opts = {},
 	},
 	{
 		"stevearc/overseer.nvim",
-		commit = "68a2d344cea4a2e11acfb5690dc8ecd1a1ec0ce0",
+		commit = "6271cab7ccc4ca840faa93f54440ffae3a3918bd",
 		cmd = {
 			"OverseerRun",
 			"OverseerClose",
@@ -466,23 +467,23 @@ local plugins = {
 			require("neogen").setup(opts)
 		end,
 	},
-	{
-		"epwalsh/obsidian.nvim",
-		version = "*", -- recommended, use latest release instead of latest commit
-		lazy = true,
-		ft = "markdown",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = function(_, opts)
-			vim.opt.conceallevel = 1
-			require("obsidian").setup({
-				workspaces = {
-					{ name = "my-notes", path = "~/vaults/my-notes" },
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"epwalsh/obsidian.nvim",
+	-- 	version = "*", -- recommended, use latest release instead of latest commit
+	-- 	lazy = true,
+	-- 	ft = "markdown",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		vim.opt.conceallevel = 1
+	-- 		require("obsidian").setup({
+	-- 			workspaces = {
+	-- 				{ name = "my-notes", path = "~/vaults/my-notes" },
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"dstein64/nvim-scrollview",
 		event = "LspAttach",
@@ -518,6 +519,13 @@ local plugins = {
 		opts = require("plugins.codecompanion"),
 		config = function(_, opts)
 			require("codecompanion").setup(opts)
+		end,
+	},
+	{
+		"milanglacier/minuet-ai.nvim",
+		opts = require("plugins.minuet"),
+		config = function(_, opts)
+			require("minuet").setup(opts)
 		end,
 	},
 }

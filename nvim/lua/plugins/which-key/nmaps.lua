@@ -8,272 +8,280 @@ local M = {
 		nowait = true, -- use `nowait` when creating keymaps
 	},
 	mappings = {
-		P = { "<cmd>Telescope projects<CR>", "Open projects" },
-		b = {
-			name = "+Buffers",
-			c = { "<cmd>bdelete!<CR>", "Close buffer" },
-			C = { "<cmd>wa <bar> %bd <bar> e# <bar> bd#<CR>", "Close all other buffers" },
-			f = {
-				"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
-				"Navigate buffers (Telescope)",
-			},
-			g = { "<cmd>BufferLinePick<CR>", "Go to buffer" },
-			n = { "<cmd>bn<CR>", "Next buffer" },
-			p = { "<cmd>bp<CR>", "Previous buffer" },
-			u = { "<cmd>checktime<CR>", "Update buffer" },
-			x = { "<cmd>BufferLinePickClose<CR>", "Close a buffer (pick)" },
+		{ "<leader>P", "<cmd>Telescope projects<CR>", desc = "Open projects" },
+
+		{ "<leader>b", group = "+Buffers" },
+		{ "<leader>bc", "<cmd>bdelete!<CR>", desc = "Close buffer" },
+		{ "<leader>bC", "<cmd>wa <bar> %bd <bar> e# <bar> bd#<CR>", desc = "Close all other buffers" },
+		{
+			"<leader>bf",
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<CR>",
+			desc = "Navigate buffers (Telescope)",
 		},
-		c = {
-			name = "+Code",
-			a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Show code actions" },
-			c = { "<cmd>CompilerOpen<CR>", "Open compilation options" },
-			d = { "<cmd>lua vim.diagnostic.open_float(0, { border = 'rounded' })<CR>", "Line diagnostics" },
-			f = { "<cmd>Format<CR>", "Format buffer" },
-			g = {
-				name = "+Go to actions",
-				d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition under cursor" },
-				i = {
-					"<cmd>lua vim.lsp.buf.implementation()<CR>",
-					"Show in quickfix implementations of symbol under cursor",
-				},
-				n = {
-					"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>",
-					"Go to next diagnostic",
-				},
-				p = {
-					"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>",
-					"Go to previous diagnostic",
-				},
-				r = { "<cmd>Telescope lsp_references<CR>", "References under cursor" },
-				v = {
-					"<cmd>vsplit | lua vim.lsp.buf.definition()<CR>",
-					"Open definition under cursor in vertical buffer",
-				},
-			},
-			h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover information" },
-			o = { "<cmd>Navbuddy<CR>", "Show code outlines" },
-			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Show Quickfix(es) list" },
-			r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-			s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Show function signature help" },
-			S = { "<cmd>Telescope lsp_document_symbols<CR>", "Show document symbols (Telescope)" },
-			v = {
-				name = "+Preview",
-				d = {
-					function()
-						local goto_preview = require("goto-preview")
-						goto_preview.goto_preview_definition()
-					end,
-					"Preview definition",
-				},
-				i = {
-					function()
-						local goto_preview = require("goto-preview")
-						goto_preview.goto_preview_implementation()
-					end,
-					"Preview implementation",
-				},
-				r = {
-					function()
-						local goto_preview = require("goto-preview")
-						goto_preview.goto_preview_references()
-					end,
-					"Preview references",
-				},
-			},
+		{ "<leader>bg", "<cmd>BufferLinePick<CR>", desc = "Go to buffer" },
+		{ "<leader>bn", "<cmd>bn<CR>", desc = "Next buffer" },
+		{ "<leader>bp", "<cmd>bp<CR>", desc = "Previous buffer" },
+		{ "<leader>bu", "<cmd>checktime<CR>", desc = "Update buffer" },
+		{ "<leader>bx", "<cmd>BufferLinePickClose<CR>", desc = "Close a buffer (pick)" },
+
+		{ "<leader>c", group = "+Code" },
+		{ "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Show code actions" },
+		{ "<leader>cc", "<cmd>CompilerOpen<CR>", desc = "Open compilation options" },
+		{
+			"<leader>cd",
+			"<cmd>lua vim.diagnostic.open_float(0, { border = 'rounded' })<CR>",
+			desc = "Line diagnostics",
 		},
-		d = {
-			name = "+Debugging",
-			b = {
-				name = "+Breakpoints",
-				b = {
-					"<cmd>DapToggleBreakpoint<CR>",
-					"Toggle breakpoint at line",
-				},
-				c = {
-					function()
-						local dap = require("dap")
-						vim.ui.input({ prompt = "Breakpoint condition:", default = "" }, function(input)
-							dap.set_breakpoint(input)
-						end)
-					end,
-					"Create conditional breakpoint",
-				},
-				l = {
-					function()
-						local dap = require("dap")
-						dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
-					end,
-					"Create log breakpoint",
-				},
-			},
-			c = { "<cmd>DapContinue<CR>", "Continue " },
-			n = { "<cmd>DapStepOver<CR>", "Step over  (debugger)" },
-			i = { "<cmd>DapStepInto<CR>", "Step into  (debugger)" },
-			o = { "<cmd>DapStepOut<CR>", "Step out  (debugger)" },
-			f = { "<cmd>Telescope dap configurations<CR>", "Select debugger configuration" },
-			h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "View expression value under cursor in hover" },
-			p = {
-				name = "+Panel controls",
-				c = { "<cmd>DebuggerClose<CR>", "Close dubugger panel" },
-				e = { "<cmd>DebuggerEval<CR>", "Evaluate expression in debugger" },
-				i = { "<cmd>DebuggerEvalInput<CR>", "Evaluate one time expression in debugger" },
-				d = { "<cmd>DebuggerToggle<CR>", "Toggle dubugger panel" },
-				o = { "<cmd>DebuggerOpen<CR>", "Open dubugger panel" },
-			},
+		{ "<leader>cf", "<cmd>Format<CR>", desc = "Format buffer" },
+		{ "<leader>cg", group = "+Go to actions" },
+		{ "<leader>cgd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to definition under cursor" },
+		{
+			"<leader>cgi",
+			"<cmd>lua vim.lsp.buf.implementation()<CR>",
+			desc = "Show in quickfix implementations of symbol under cursor",
 		},
-		e = { "<cmd>NvimTreeToggle<CR>", "File Explorer" },
-		f = {
-			name = "+Find operations",
-			a = { "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", "Find all" },
-			b = { "<cmd>Telescope buffers<CR>", "Find buffers" },
-			d = { "<cmd>Telescope diagnostics<CR>", "Find LSP diagnostics" },
-			h = { "<cmd>Telescope help_tags<CR>", "Help page" },
-			f = {
-				"<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
-				"Find files",
-			},
-			o = { "<cmd>Telescope oldfiles<CR>", "Find oldfiles" },
-			r = { "<cmd>Spectre<CR>", "Find & Replace (Spectre)" },
-			t = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "Find in current buffer" },
-			T = { "<cmd>TodoTelescope<CR>", "Find TODO annotations" },
-			w = { "<cmd>Telescope live_grep<CR>", "Live grep (find text)" },
+		{
+			"<leader>cgn",
+			"<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>",
+			desc = "Go to next diagnostic",
 		},
-		g = {
-			name = "+Git",
-			c = {
-				name = "+Conflicts tools",
-				c = { "<cmd>GitConflictChooseOurs<CR>", "Select current changes" },
-				i = { "<cmd>GitConflictChooseTheirs<CR>", "Select incoming changes" },
-				b = { "<cmd>GitConflictChooseBoth<CR>", "Select both changes" },
-				N = { "<cmd>GitConflictChooseNone<CR>", "Select none of the changes" },
-				n = { "<cmd>GitConflictNextConflict<CR>", "Move to next conflict" },
-				p = { "<cmd>GitConflictPrevConflict<CR>", "Move to previous conflict" },
-				q = { "<cmd>GitConflictListQf<CR>", "Show all conflicts in quickfix" },
-			},
-			g = {
-				require("plugins.octo").select_actions,
-				"GitHub",
-			},
-			l = {
-				function()
-					if vim.fn.executable("lazygit") then
-						local term_configs = require("plugins.toggleterm")
-						local Terminal = term_configs.get_terminal_instance()
-						local lazygit = term_configs.create_lazygit_term(Terminal)
-						lazygit:toggle()
-					end
-				end,
-				"Toggle LazyGit Terminal",
-			},
-			h = {
-				name = "Hunk operations (Gitsigns)",
-				j = { "<cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
-				k = { "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
-				l = { "<cmd>lua require 'gitsigns'.blame_line()<CR>", "Blame line" },
-				p = { "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
-				r = { "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
-				R = { "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
-				s = { "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
-				u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" },
-			},
+		{
+			"<leader>cgp",
+			"<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>",
+			desc = "Go to previous diagnostic",
 		},
-		h = { "<cmd>nohlsearch<CR>", "Clear highlight search" },
-		m = {
-			name = "+Monitoring",
-			e = { "<cmd>Telescope env<CR>", "Current environment variables" },
-			i = { "<cmd>Inspect<CR>", "Inspect under cursor" },
-			t = { "<cmd>InspectTree<CR>", "Inspect tree" },
-			l = {
-				name = "+LSP",
-				i = { "<cmd>LspInfo<CR>", "Open LSP info panel" },
-				l = { "<cmd>LspLog<CR>", "LSP logs" },
-				r = { "<cmd>LspRestart<CR>", "Restart LSP server" },
-			},
+		{ "<leader>cgr", "<cmd>Telescope lsp_references<CR>", desc = "References under cursor" },
+		{
+			"<leader>cgv",
+			"<cmd>vsplit | lua vim.lsp.buf.definition()<CR>",
+			desc = "Open definition under cursor in vertical buffer",
 		},
-		O = { "<cmd>only<CR>", "Close all other windows except the current one" },
-		p = {
-			name = "+Plugins (Mason, Lazy, etc)",
-			l = { "<cmd>Lazy<CR>", "Open lazy.nvim panel" },
-			m = { "<cmd>Mason<CR>", "Open mason.nvim panel" },
+		{ "<leader>ch", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Show hover information" },
+		{ "<leader>co", "<cmd>Navbuddy<CR>", desc = "Show code outlines" },
+		{ "<leader>cq", "<cmd>lua vim.diagnostic.setloclist()<CR>", desc = "Show Quickfix(es) list" },
+		{ "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+		{ "<leader>cs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "Show function signature help" },
+		{ "<leader>cS", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Show document symbols (Telescope)" },
+		{ "<leader>cv", group = "+Preview" },
+		{
+			"<leader>cvd",
+			function()
+				local goto_preview = require("goto-preview")
+				goto_preview.goto_preview_definition()
+			end,
+			desc = "Preview definition",
 		},
-		q = { "<cmd>q<CR>", "Quit" },
-		s = { "<cmd> set eventignore=BufWritePost | write | set eventignore= <CR>", "Save without events" },
-		S = {
-			name = "+Session management",
-			s = { "<cmd>SessionSave<CR>", "Save session" },
-			r = { "<cmd>SessionRestore<CR>", "Restore session" },
-			d = { "<cmd>SessionDelete<CR>", "Delete session" },
+		{
+			"<leader>cvi",
+			function()
+				local goto_preview = require("goto-preview")
+				goto_preview.goto_preview_implementation()
+			end,
+			desc = "Preview implementation",
 		},
-		t = {
-			name = "+Test utilities",
-			a = {
-				"<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<CR>",
-				"Run all tests in file",
-			},
-			A = {
-				"<cmd>lua require('neotest').run.run({ vim.fn.getcwd()})<CR>",
-				"Run all tests in suite (project root)",
-			},
-			d = {
-				"<cmd>lua require('neotest').run.run({ strategy = 'dap'})<CR>",
-				"Debug nearest test to cursor",
-			},
-			n = {
-				"<cmd>Neotest run<CR>",
-				"Run nearest test to cursor",
-			},
-			p = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle test summary panel" },
-			s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop all running jobs for current file" },
-			o = { "<cmd>lua require('neotest').output.open({short=true})<CR>", "Output of test nearest to cursor" },
-			O = {
-				"<cmd>lua require('neotest').output.open({enter=true})<CR>",
-				"Output (scrollable) of test nearest to cursor",
-			},
-			C = {
-				name = "+Configurations",
-			},
+		{
+			"<leader>cvr",
+			function()
+				local goto_preview = require("goto-preview")
+				goto_preview.goto_preview_references()
+			end,
+			desc = "Preview references",
 		},
-		T = {
-			name = "+Trouble",
-			t = { "<cmd>TodoTrouble<CR>", "Open TODOs in trouble" },
-			p = { "<cmd>TroubleToggle<CR>", "Toggle trouble panel" },
-			R = { "<cmd>TroubleRefresh<CR>", "Refresh active trouble list" },
-			d = { "<cmd>TroubleToggle document_diagnostics<CR>", "Toggle document diagnostics" },
-			w = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Toggle workspace diagnostics" },
-			q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfix items" },
-			l = { "<cmd>TroubleToggle loclist<CR>", "Toggle window's location list items" },
-			r = { "<cmd>TroubleToggle lsp_references<CR>", "Toggle references of word" },
-			D = { "<cmd>TroubleToggle lsp_definitions<CR>", "Toggle definitions of word" },
+
+		{ "<leader>d", group = "+Debugging" },
+		{ "<leader>db", group = "+Breakpoints" },
+		{ "<leader>dbb", "<cmd>DapToggleBreakpoint<CR>", desc = "Toggle breakpoint at line" },
+		{
+			"<leader>dbc",
+			function()
+				local dap = require("dap")
+				vim.ui.input({ prompt = "Breakpoint condition:", default = "" }, function(input)
+					dap.set_breakpoint(input)
+				end)
+			end,
+			desc = "Create conditional breakpoint",
 		},
-		u = {
-			name = "+Terminal utils",
-			a = { "<cmd>ToggleTermToggleAll<CR>", "Toggle all terminals" },
-			d = {
-				function()
-					if vim.fn.executable("lazydocker") then
-						local term_configs = require("plugins.toggleterm")
-						local Terminal = term_configs.get_terminal_instance()
-						local lazydocker = term_configs.create_lazydocker_term(Terminal)
-						lazydocker:toggle()
-					end
-				end,
-				"Toggle LazyDocker Terminal",
-			},
-			f = { "<cmd>Telescope termfinder<CR>", "Find terminals" },
-			n = {
-				function()
-					if vim.fn.executable("lazydocker") then
-						local term_configs = require("plugins.toggleterm")
-						local Terminal = term_configs.get_terminal_instance()
-						local term = term_configs.create_floating_term(Terminal)
-						term:toggle()
-					end
-				end,
-				"Toggle floating Terminal",
-			},
+		{
+			"<leader>dbl",
+			function()
+				local dap = require("dap")
+				dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+			end,
+			desc = "Create log breakpoint",
 		},
-		x = { "<cmd>bdelete!<CR>", "Close buffer" },
-		w = { "<cmd>w<CR>", "Save" },
+		{ "<leader>dc", "<cmd>DapContinue<CR>", desc = "Continue " },
+		{ "<leader>dn", "<cmd>DapStepOver<CR>", desc = "Step over  (debugger)" },
+		{ "<leader>di", "<cmd>DapStepInto<CR>", desc = "Step into  (debugger)" },
+		{ "<leader>do", "<cmd>DapStepOut<CR>", desc = "Step out  (debugger)" },
+		{ "<leader>df", "<cmd>Telescope dap configurations<CR>", desc = "Select debugger configuration" },
+		{
+			"<leader>dh",
+			"<cmd>lua require('dap.ui.widgets').hover()<CR>",
+			desc = "View expression value under cursor in hover",
+		},
+		{ "<leader>dp", group = "+Panel controls" },
+		{ "<leader>dpc", "<cmd>DebuggerClose<CR>", desc = "Close dubugger panel" },
+		{ "<leader>dpe", "<cmd>DebuggerEval<CR>", desc = "Evaluate expression in debugger" },
+		{ "<leader>dpi", "<cmd>DebuggerEvalInput<CR>", desc = "Evaluate one time expression in debugger" },
+		{ "<leader>dpd", "<cmd>DebuggerToggle<CR>", desc = "Toggle dubugger panel" },
+		{ "<leader>dpo", "<cmd>DebuggerOpen<CR>", desc = "Open dubugger panel" },
+
+		{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "File Explorer" },
+
+		{ "<leader>f", group = "+Find operations" },
+		{
+			"<leader>fa",
+			"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+			desc = "Find all files",
+		},
+		{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find buffers" },
+		{ "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "Find LSP diagnostics" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Help page" },
+		{
+			"<leader>ff",
+			"<cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<CR>",
+			desc = "Find files",
+		},
+		{ "<leader>fo", "<cmd>Telescope oldfiles<CR>", desc = "Find oldfiles" },
+		{ "<leader>fr", "<cmd>Spectre<CR>", desc = "Find & Replace (Spectre)" },
+		{ "<leader>ft", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Find in current buffer" },
+		{ "<leader>fT", "<cmd>TodoTelescope<CR>", desc = "Find TODO annotations" },
+		{ "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Live grep (find text)" },
+
+		{ "<leader>g", group = "+Git" },
+		{ "<leader>gc", group = "+Conflicts tools" },
+		{ "<leader>gcc", "<cmd>GitConflictChooseOurs<CR>", desc = "Select current changes" },
+		{ "<leader>gci", "<cmd>GitConflictChooseTheirs<CR>", desc = "Select incoming changes" },
+		{ "<leader>gcb", "<cmd>GitConflictChooseBoth<CR>", desc = "Select both changes" },
+		{ "<leader>gcN", "<cmd>GitConflictChooseNone<CR>", desc = "Select none of the changes" },
+		{ "<leader>gcn", "<cmd>GitConflictNextConflict<CR>", desc = "Move to next conflict" },
+		{ "<leader>gcp", "<cmd>GitConflictPrevConflict<CR>", desc = "Move to previous conflict" },
+		{ "<leader>gcq", "<cmd>GitConflictListQf<CR>", desc = "Show all conflicts in quickfix" },
+		{ "<leader>gg", require("plugins.octo").select_actions, desc = "GitHub" },
+		{
+			"<leader>gl",
+			function()
+				if vim.fn.executable("lazygit") then
+					local term_configs = require("plugins.toggleterm")
+					local Terminal = term_configs.get_terminal_instance()
+					local lazygit = term_configs.create_lazygit_term(Terminal)
+					lazygit:toggle()
+				end
+			end,
+			desc = "Toggle LazyGit Terminal",
+		},
+		{ "<leader>gh", group = "+Hunk operations (Gitsigns)" },
+		{ "<leader>ghi", "<cmd>lua require 'gitsigns'.next_hunk()<CR>", desc = "Next Hunk" },
+		{ "<leader>ghk", "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", desc = "Prev Hunk" },
+		{ "<leader>ghl", "<cmd>lua require 'gitsigns'.blame_line()<CR>", desc = "Blame line" },
+		{ "<leader>ghp", "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", desc = "Preview Hunk" },
+		{ "<leader>ghr", "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", desc = "Reset Hunk" },
+		{ "<leader>ghR", "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", desc = "Reset Buffer" },
+		{ "<leader>ghs", "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", desc = "Stage Hunk" },
+		{ "<leader>ghu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", desc = "Undo Stage Hunk" },
+
+		{ "<leader>h", "<cmd>nohlsearch<CR>", desc = "Clear highlight search" },
+
+		{ "<leader>m", group = "+Monitoring" },
+		{ "<leader>me", "<cmd>Telescope env<CR>", desc = "Current environment variables" },
+		{ "<leader>mi", "<cmd>Inspect<CR>", desc = "Inspect under cursor" },
+		{ "<leader>mt", "<cmd>InspectTree<CR>", desc = "Inspect tree" },
+		{ "<leader>ml", group = "+LSP" },
+		{ "<leader>mli", "<cmd>LspInfo<CR>", desc = "Open LSP info panel" },
+		{ "<leader>mll", "<cmd>LspLog<CR>", desc = "LSP logs" },
+		{ "<leader>mlr", "<cmd>LspRestart<CR>", desc = "Restart LSP server" },
+
+		{ "<leader>O", "<cmd>only<CR>", desc = "Close all other windows except the current one" },
+
+		{ "<leader>p", group = "+Plugins (Mason, Lazy, etc)" },
+		{ "<leader>pl", "<cmd>Lazy<CR>", desc = "Open lazy.nvim panel" },
+		{ "<leader>pm", "<cmd>Mason<CR>", desc = "Open mason.nvim panel" },
+
+		{ "<leader>q", "<cmd>q<CR>", desc = "Quit" },
+
+		{
+			"<leader>s",
+			"<cmd> set eventignore=BufWritePost | write | set eventignore= <CR>",
+			desc = "Save without events",
+		},
+
+		{ "<leader>S", group = "+Session management" },
+		{ "<leader>Ss", "<cmd>SessionSave<CR>", desc = "Save session" },
+		{ "<leader>Sr", "<cmd>SessionRestore<CR>", desc = "Restore session" },
+		{ "<leader>Sd", "<cmd>SessionDelete<CR>", desc = "Delete session" },
+
+		{ "<leader>t", group = "+Test utilities" },
+		{
+			"<leader>ta",
+			"<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<CR>",
+			desc = "Run all tests in file",
+		},
+		{
+			"<leader>tA",
+			"<cmd>lua require('neotest').run.run({ vim.fn.getcwd()})<CR>",
+			desc = "Run all tests in suite (project root)",
+		},
+		{
+			"<leader>td",
+			"<cmd>lua require('neotest').run.run({ strategy = 'dap'})<CR>",
+			desc = "Debug nearest test to cursor",
+		},
+		{ "<leader>tn", "<cmd>Neotest run<CR>", desc = "Run nearest test to cursor" },
+		{ "<leader>tp", "<cmd>lua require('neotest').summary.toggle()<CR>", desc = "Toggle test summary panel" },
+		{ "<leader>ts", "<cmd>lua require('neotest').run.stop()<CR>", desc = "Stop all running jobs for current file" },
+		{
+			"<leader>to",
+			"<cmd>lua require('neotest').output.open({short=true})<CR>",
+			desc = "Output of test nearest to cursor",
+		},
+		{
+			"<leader>tO",
+			"<cmd>lua require('neotest').output.open({enter=true})<CR>",
+			desc = "Output (scrollable) of test nearest to cursor",
+		},
+
+		{ "<leader>T", group = "+Trouble" },
+		{ "<leader>Tt", "<cmd>TodoTrouble<CR>", desc = "Open TODOs in trouble" },
+		{ "<leader>Tp", "<cmd>TroubleToggle<CR>", desc = "Toggle trouble panel" },
+		{ "<leader>TR", "<cmd>TroubleRefresh<CR>", desc = "Refresh active trouble list" },
+		{ "<leader>Td", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "Toggle document diagnostics" },
+		{ "<leader>Tw", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Toggle workspace diagnostics" },
+		{ "<leader>Tq", "<cmd>TroubleToggle quickfix<CR>", desc = "Toggle quickfix items" },
+		{ "<leader>Tl", "<cmd>TroubleToggle loclist<CR>", desc = "Toggle window's location list items" },
+		{ "<leader>Tr", "<cmd>TroubleToggle lsp_references<CR>", desc = "Toggle references of word" },
+		{ "<leader>TD", "<cmd>TroubleToggle lsp_definitions<CR>", desc = "Toggle definitions of word" },
+
+		{ "<leader>u", group = "+Terminal utils" },
+		{ "<leader>ua", "<cmd>ToggleTermToggleAll<CR>", desc = "Toggle all terminals" },
+		{
+			"<leader>ud",
+			function()
+				if vim.fn.executable("lazydocker") then
+					local term_configs = require("plugins.toggleterm")
+					local Terminal = term_configs.get_terminal_instance()
+					local lazydocker = term_configs.create_lazydocker_term(Terminal)
+					lazydocker:toggle()
+				end
+			end,
+			desc = "Toggle LazyDocker Terminal",
+		},
+		{ "<leader>uf", "<cmd>Telescope termfinder<CR>", desc = "Find terminals" },
+		{
+			"<leader>un",
+			function()
+				if vim.fn.executable("lazydocker") then
+					local term_configs = require("plugins.toggleterm")
+					local Terminal = term_configs.get_terminal_instance()
+					local term = term_configs.create_floating_term(Terminal)
+					term:toggle()
+				end
+			end,
+			desc = "Toggle floating Terminal",
+		},
+
+		{ "<leader>x", "<cmd>bdelete!<CR>", desc = "Close buffer" },
+
+		{ "<leader>w", "<cmd>w<CR>", desc = "Save" },
 	},
 }
 

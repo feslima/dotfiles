@@ -4,7 +4,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"gopls",
 		"pyright",
 		"golangci_lint_ls",
-		"ruff_lsp",
+		"ruff",
 		"eslint",
 		"yamlls",
 		"svelte",
@@ -16,11 +16,11 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"clangd",
 		"jdtls",
 		"ast_grep",
-		"bufls",
+		"buf_ls",
 		"asm_lsp",
 		"sqlls",
 		"jinja_lsp",
-    "emmet_language_server"
+		"emmet_language_server",
 	}
 
 	local table = {}
