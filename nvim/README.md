@@ -4,12 +4,12 @@
 
 - Install [`ripgrep`](https://github.com/BurntSushi/ripgrep).
 
-## Installing neovim (v0.9.0)
+## Installing neovim (v0.11.0)
 
 [Instructions](https://github.com/neovim/neovim/wiki/Installing-Neovim#appimage-universal-linux-package)
 
 1. Uninstall previous versions if you have any.
-2. Download the latest stable it with: `curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage`.
+2. Download the latest stable it with: `curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim-<your-os>-<your-arch>.appimage`.
 3. Run `chmod u+x nvim.appimage`.
 4. Move it to `$PATH` with `sudo mv nvim.appimage /usr/local/bin/nvim`.
 5. Done!

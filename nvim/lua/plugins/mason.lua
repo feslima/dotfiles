@@ -35,7 +35,6 @@ local opts = {
 		"clang-format",
 
 		-- protobuffs
-		"buf-language-server",
 		"buf",
 
 		-- python

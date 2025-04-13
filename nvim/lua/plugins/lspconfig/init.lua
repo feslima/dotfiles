@@ -1,19 +1,17 @@
 -- base LSP stuff
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
-}
 
-for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
-
-local config = {
+---@type vim.diagnostic.Opts
+local diag_config = {
 	virtual_text = false,
+	virtual_lines = { current_line = true },
 	signs = {
-		active = signs,
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.HINT] = "",
+			[vim.diagnostic.severity.INFO] = "",
+		},
+		numhl = {},
 	},
 	update_in_insert = true,
 	underline = true,
@@ -22,35 +20,28 @@ local config = {
 		focusable = false,
 		style = "minimal",
 		border = "rounded",
-		source = "always",
+		source = true,
 		header = "",
 		prefix = "",
 	},
 }
 
-vim.diagnostic.config(config)
+vim.diagnostic.config(diag_config)
 
--- See: https://github.com/rcarriga/nvim-notify/issues/110#issuecomment-1163458196
-vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
-	config = config or {}
-	config.focus_id = ctx.method
-	config.border = "rounded"
-	if not (result and result.contents) then
-		-- vim.notify("No information available")
-		return
-	end
-	local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-	markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
-	if vim.tbl_isempty(markdown_lines) then
-		-- vim.notify('No information available')
-		return
-	end
-	return vim.lsp.util.open_floating_preview(markdown_lines, "markdown", config)
-end
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-	border = "rounded",
+-- Configures the hover feature
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(event)
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover({ border = "rounded" })
+		end, { buffer = event.buf })
+	end,
 })
+
+---@param result vim.lsp.CompletionResult|lsp.CompletionParams|nil
+---@param ctx table
+vim.lsp.handlers["textDocument/signatureHelp"] = function(_, result, ctx)
+	vim.lsp.buf.signature_help({ border = "rounded" })
+end
 
 -- LSP config
 local lspconfig = require("lspconfig")

@@ -152,7 +152,8 @@ local plugins = {
 	},
 	{
 		"rmagatti/goto-preview",
-		dependencies = "nvim-telescope/telescope.nvim",
+		event = "BufEnter",
+		dependencies = { "nvim-telescope/telescope.nvim", "rmagatti/logger.nvim" },
 		config = function()
 			require("goto-preview").setup({
 				height = 20,
