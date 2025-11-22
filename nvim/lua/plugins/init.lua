@@ -536,8 +536,8 @@ local plugins = {
 		},
 		cmd = "Copilot",
 		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({})
+		config = function(_, opts)
+			require("copilot").setup(opts)
 		end,
 	},
 	{
