@@ -2,6 +2,13 @@ local plugins = {
 	{ "nvim-lua/plenary.nvim", lazy = false },
 	{
 		"nvim-treesitter/nvim-treesitter",
+		init = function()
+			require("vim.treesitter.query").add_predicate("is-mise?", function(_, _, bufnr, _)
+				local filepath = vim.api.nvim_buf_get_name(tonumber(bufnr) or 0)
+				local filename = vim.fn.fnamemodify(filepath, ":t")
+				return string.match(filename, ".*mise.*%.toml$") ~= nil
+			end, { force = true, all = false })
+		end,
 		opts = require("plugins.nvim-treesitter"),
 		build = { ":TSUpdate" },
 		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
@@ -523,11 +530,22 @@ local plugins = {
 		end,
 	},
 	{
-		"milanglacier/minuet-ai.nvim",
-		opts = require("plugins.minuet"),
-		config = function(_, opts)
-			require("minuet").setup(opts)
+		"zbirenbaum/copilot.lua",
+		dependencies = {
+			"copilotlsp-nvim/copilot-lsp", -- (optional) for NES functionality
+		},
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({})
 		end,
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+		requires = { "zbirenbaum/copilot.lua" },
 	},
 }
 

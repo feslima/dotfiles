@@ -4,7 +4,14 @@ local tsserver_organize_imports = function()
 		arguments = { vim.api.nvim_buf_get_name(0) },
 	}
 
-	vim.lsp.buf.execute_command(params)
+	local clients = vim.lsp.get_clients({ name = "typescript-tools" })
+
+	if #clients == 0 then
+		vim.notify("No typescript-tools client found", vim.log.levels.ERROR)
+		return
+	end
+	local client = clients[1]
+	client:exec_cmd(params)
 end
 
 local setup = function(on_attach, capabilities, _)

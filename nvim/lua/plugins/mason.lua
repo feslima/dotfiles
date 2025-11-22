@@ -11,6 +11,9 @@ local opts = {
 		"asm-lsp",
 		"asmfmt",
 
+		-- Bash
+		"bash-language-server",
+
 		-- C/C++
 		"clangd",
 		"ast-grep",
@@ -25,6 +28,9 @@ local opts = {
 		"golangci-lint",
 		"golangci-lint-langserver",
 		"delve",
+
+		-- JSON
+		"json-lsp",
 
 		-- lua
 		"lua-language-server",
@@ -42,7 +48,6 @@ local opts = {
 		"black",
 		"isort",
 		"ruff",
-		"ruff-lsp",
 		"debugpy",
 
 		-- typescript

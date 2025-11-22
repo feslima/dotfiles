@@ -1,31 +1,18 @@
 local opts = {
 	strategies = {
 		chat = {
-			adapter = "ollama",
+			adapter = {
+				name = "copilot",
+				model = "claude-sonnet-4.5",
+			},
 		},
 		inline = {
-			adapter = "ollama",
+			adapter = "copilot",
 		},
-	},
-	adapters = {
-		ollama = function()
-			return require("codecompanion.adapters").extend("ollama", {
-				schema = {
-					model = {
-						default = "deepseek-r1:8b",
-					},
-				},
-				env = {
-					url = "http://127.0.0.1:11434",
-				},
-				headers = {
-					["Content-Type"] = "application/json",
-				},
-				parameters = {
-					sync = true,
-				},
-			})
-		end,
+		cmd = {
+
+			adapter = "copilot",
+		},
 	},
 }
 

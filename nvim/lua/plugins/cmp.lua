@@ -114,7 +114,6 @@ local M = {
 			"i",
 			"s",
 		}),
-		["<A-y>"] = require("minuet").make_cmp_map(),
 	},
 	-- How the completion menu is formatted
 	formatting = {
@@ -134,8 +133,8 @@ local M = {
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
-				minuet = "[AI Completion]",
-				codecompanion = "[AI]",
+				codecompanion = "[AI Companion]",
+				copilot = "[Copilot]",
 			})[entry.source.name]
 			return item
 		end,
@@ -144,8 +143,8 @@ local M = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "copilot" },
 		{ name = "codecompanion" },
-		{ name = "minuet" },
 		{ name = "buffer" },
 		{ name = "path" },
 	},
