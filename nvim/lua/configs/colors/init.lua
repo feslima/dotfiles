@@ -33,6 +33,7 @@ local colors_modules = {
 	"plugins.render-markdown",
 	"plugins.telescope",
 	"plugins.which-key",
+	"plugins.copilot-lsp",
 }
 
 local c = require("configs.colortable")

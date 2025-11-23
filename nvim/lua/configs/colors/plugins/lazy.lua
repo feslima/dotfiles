@@ -1,3 +1,5 @@
+---@param c ColorsTable
+---@return table
 local set_colors = function(c)
 	return {
 		LazyH1 = { bg = c.vscPopupBack, fg = c.vscUiOrange },

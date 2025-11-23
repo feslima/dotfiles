@@ -1,4 +1,4 @@
----@type ColorsTable
+---@enum ColorsTable
 local color_table = {
 	vscNone = "NONE",
 	vscFront = "#D4D4D4",

@@ -30,7 +30,7 @@ local M = {
 		},
 	},
 	nes = {
-		enabled = false, -- requires copilot-lsp as a dependency
+		enabled = true, -- requires copilot-lsp as a dependency
 		auto_trigger = false,
 		keymap = {
 			accept_and_goto = false,

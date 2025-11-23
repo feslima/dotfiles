@@ -19,6 +19,9 @@ local opts = {
 		"ast-grep",
 		"cpptools",
 
+		-- Copilot
+		"copilot-language-server",
+
 		-- Docker
 		"docker-compose-language-service",
 		"dockerfile-language-server",
