@@ -21,6 +21,7 @@ local get_enabled_servers = function(on_attach, capabilities, util)
 		"sqlls",
 		"jinja_lsp",
 		"emmet_language_server",
+		"taplo",
 	}
 
 	local table = {}

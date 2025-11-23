@@ -77,6 +77,9 @@ local opts = {
 		-- tailwind
 		"tailwindcss-language-server",
 
+		-- toml
+		"taplo",
+
 		-- yaml
 		"yaml-language-server",
 		"yamlfmt",
